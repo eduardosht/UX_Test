@@ -1,275 +1,487 @@
 <div class="container">
-    <div id="avaliacao-step"><span class="step step-question0 current"></span><span class="step step-question1"></span><span class="step step-question2"></span><span class="step step-question3"></span><span class="step step-question4"></span><span class="step step-question5"></span><span class="step step-question6"></span><span class="step step-question7"></span><span class="step step-question8"></span><span class="step step-question9"></span></div>
+    <div id="header-avaliacao">
+        <div id="timer"></div>
+        <div id="avaliacao-step"><span class="step step-question0 current"></span><span class="step step-question1"></span><span class="step step-question2"></span><span class="step step-question3"></span><span class="step step-question4"></span><span class="step step-question5"></span><span class="step step-question6"></span><span class="step step-question7"></span><span class="step step-question8"></span><span class="step step-question9"></span></div>
+        <div class="questions">
+            <span class="actual-question">1</span>
+            <span class="divisor">/</span>
+            <span class="total-question">10</span>
+        </div>
+    </div>
+    
     <div id="quiz" class="funkyradio-default">
        <div class="question-box question0 active">
-          <div class="question">  Who is the strongest? </div>
+          <div class="question">1.  Precisamos construir uma persona através de dados coletados em questionários e entrevistas. O que devemos fazer primeiro com esses dados? </div>
           <div class="answers">
              <div class="funkyradio">
                 <input type="radio" id="radio0" name="question0" value="a">
-                <label for="radio0">Superman</label>
+                <label for="radio0">Identificar padrões nas características dos entrevistados</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio1" name="question0" value="b">
-                <label for="radio1">The Terminator</label>
+                <label for="radio1">Identificar o problema mais grave citado em todas as entrevistas</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio2" name="question0" value="c">
-                <label for="radio2">Waluigi, obviously</label>
+                <label for="radio2">Agregar todos os comportamentos e problemas levantados em uma pessoa fictícia</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio3" name="question0" value="d">
-                <label for="radio3">Waluigi, obviously</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio4" name="question0" value="e">
-                <label for="radio4">Waluigi, obviously</label>
+                <label for="radio3">Separar os perfis de usuários com base em informações demográficas</label>
              </div>
           </div>
-          <button class="next" (click)="proximaQuestao(1)">Próxima</button>
+        <div class="btns">
+            <button class="next btn btn-secondary" (click)="proximaQuestao(1)">Próxima</button>
+        </div>
        </div>
        <div class="question-box question1">
-          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+            <div class="question">
+                <a class="example-image-link" href="https://images3.alphacoders.com/823/82317.jpg" data-lightbox="example">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">
+                </a>
+                2. Observe o UX Canvas mostrado na imagem. Qual é o objetivo principal desta ferramenta?
+            </div>
           <div class="answers">
              <div class="funkyradio">
                 <input type="radio" id="radio6" name="question1" value="a">
-                <label for="radio6">SitePoint</label>
+                <label for="radio6">Identificar as necessidades e desejos do usuário</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio7" name="question1" value="b">
-                <label for="radio7">Simple Steps Code</label>
+                <label for="radio7">Entender o modelo de negócios do cliente e mapear possíveis investidores</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio8" name="question1" value="c">
-                <label for="radio8">Trick question; they're both the best</label>
+                <label for="radio8">Mapear os recursos e limitações do projeto</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio9" name="question1" value="d">
-                <label for="radio9">Trick question; they're both the best</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio10" name="question1" value="e">
-                <label for="radio10">Trick question; they're both the best</label>
+                <label for="radio9">Encontrar soluções que satisfaçam cliente e usuário</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(0)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(2)">Próxima</button>
-       </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(0)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(2)">Próxima</button>
+          </div>
+        </div>
        <div class="question-box question2">
-          <div class="question">  Where is Waldo really? </div>
+          <div class="question">3. Vamos supor que você esteja entrevistando um usuário, a fim de investigar problemas e oportunidades para um aplicativo de compras de sapatos. Qual das perguntas a seguir é a mais adequada para esse tipo de investigação? </div>
           <div class="answers">
              <div class="funkyradio">
-                <input type="checkbox" id="radio12" name="question2" value="a">
-                <label for="radio12">Antarctica</label>
+                <input type="radio" id="radio12" name="question2" value="a">
+                <label for="radio12">Você compra sapatos online?</label>
              </div>
              <div class="funkyradio">
-                <input type="checkbox" id="radio13" name="question2" value="b">
-                <label for="radio13">Exploring the Pacific Ocean</label>
+                <input type="radio" id="radio13" name="question2" value="b">
+                <label for="radio13">Qual foi a última vez que você comprou um sapato online?</label>
              </div>
              <div class="funkyradio">
-                <input type="checkbox" id="radio14" name="question2" value="c">
-                <label for="radio14">Sitting in a tree</label>
+                <input type="radio" id="radio14" name="question2" value="c">
+                <label for="radio14">Conte-me sobre a última vez que você comprou um sapato online</label>
              </div>
              <div class="funkyradio">
-                <input type="checkbox" id="radio15" name="question2" value="d">
-                <label for="radio15">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio16" name="question2" value="e">
-                <label for="radio16">Minding his own business, so stop asking</label>
+                <input type="radio" id="radio15" name="question2" value="d">
+                <label for="radio15">Qual foi a sua maior frustração ao comprar um sapato online?</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(1)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(3)">Próxima</button>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(1)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(3)">Próxima</button>
+            </div>
        </div>
        <div class="question-box question3">
-          <div class="question">  Where is Waldo really? </div>
+            <div class="question">
+                <a class="example-image-link" href="https://images3.alphacoders.com/823/82317.jpg" data-lightbox="example">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">
+                </a>
+                4. Uma das metodologias mais aplicadas para acelerar as chances de sucesso de um empreendimento é o conceito de Lean Startup. Ao lado vemos o princípio da metodologia lean. 
+                <br /><br />Qual o conceito de um Produto Mínimo Viável (MVP)?
+            </div>
+
           <div class="answers">
              <div class="funkyradio">
                 <input type="radio" id="radio18" name="question3" value="a">
-                <label for="radio18">Antarctica</label>
+                <label for="radio18">Conjunto de funcionalidades mínimas para deixar o produto final mais completo</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio19" name="question3" value="b">
-                <label for="radio19">Exploring the Pacific Ocean</label>
+                <label for="radio19">Conjunto de funcionalidades mínimas de um produto para lançá-lo e testá-lo</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio20" name="question3" value="c">
-                <label for="radio20">Sitting in a tree</label>
+                <label for="radio20">Conjunto de funcionalidades mínimas considerando as mais completas para validação</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio21" name="question3" value="d">
-                <label for="radio21">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio22" name="question3" value="e">
-                <label for="radio22">Minding his own business, so stop asking</label>
+                <label for="radio21">Conjunto de funcionalidades mínimas de produtos para descartar quais não funcionam</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(2)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(4)">Próxima</button>
-       </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(2)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(4)">Próxima</button>
+            </div>
+        </div>
        <div class="question-box question4">
-          <div class="question">  Where is Waldo really? </div>
+            <div class="question">
+                <a class="example-image-link" href="https://images3.alphacoders.com/823/82317.jpg" data-lightbox="example">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">
+                </a>
+                5. Observando a imagem ao lado, em qual das etapas do ciclo de uma lean startup deve ser desenvolvido um MVP?
+            </div>
           <div class="answers">
              <div class="funkyradio">
-                <input type="checkbox" id="radio24" name="question4" value="a">
-                <label for="radio24">Antarctica</label>
+                <input type="radio" id="radio24" name="question4" value="a">
+                <label for="radio24">Construção</label>
              </div>
              <div class="funkyradio">
-                <input type="checkbox" id="radio25" name="question4" value="b">
-                <label for="radio25">Exploring the Pacific Ocean</label>
+                <input type="radio" id="radio25" name="question4" value="b">
+                <label for="radio25">Medição</label>
              </div>
              <div class="funkyradio">
-                <input type="checkbox" id="radio26" name="question4" value="c">
-                <label for="radio26">Sitting in a tree</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio27" name="question4" value="d">
-                <label for="radio27">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio28" name="question4" value="e">
-                <label for="radio28">Minding his own business, so stop asking</label>
+                <input type="radio" id="radio26" name="question4" value="c">
+                <label for="radio26">Aprendizado</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(3)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(5)">Próxima</button>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(3)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(5)">Próxima</button>
+            </div>
        </div>
        <div class="question-box question5">
-          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> Where is Waldo really? </div>
+
+            <div class="question">
+                <a class="example-image-link" href="https://images3.alphacoders.com/823/82317.jpg" data-lightbox="example">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">
+                </a>
+                6. A imagem apresentada é uma ferramenta de mapeamento de todas as decisões e engajamento do usuário, e nos serve para identificar barreiras e oportunidades no nosso projeto. Qual é o nome dessa ferramenta?
+            </div>
           <div class="answers">
              <div class="funkyradio">
                 <input type="radio" id="radio30" name="question5" value="a">
-                <label for="radio30">Antarctica</label>
+                <label for="radio30">Canvas do Modelo de Negócios</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio31" name="question5" value="b">
-                <label for="radio31">Exploring the Pacific Ocean</label>
+                <label for="radio31">UX Canvas</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio32" name="question5" value="c">
-                <label for="radio32">Sitting in a tree</label>
+                <label for="radio32">Jornada do Usuário</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio33" name="question5" value="d">
-                <label for="radio33">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio34" name="question5" value="e">
-                <label for="radio34">Minding his own business, so stop asking</label>
+                <label for="radio33">Mapa de empatia</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(4)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(6)">Próxima</button>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(4)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(6)">Próxima</button>
+            </div>
        </div>
        <div class="question-box question6">
-          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+            <div class="question">
+                <a class="example-image-link" href="https://images3.alphacoders.com/823/82317.jpg" data-lightbox="example">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">
+                </a>
+            7. O mapa de empatia, é uma ferramenta para ajudar entender o usuário. Mas da onde buscamos e tiramos as informações para preencher o mapa?
+            </div>
           <div class="answers">
              <div class="funkyradio">
                 <input type="radio" id="radio36" name="question6" value="a">
-                <label for="radio36">Antarctica</label>
+                <label for="radio36">Nos objetivos do nosso cliente</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio37" name="question6" value="b">
-                <label for="radio37">Exploring the Pacific Ocean</label>
+                <label for="radio37">Nas personas e/ou proto-personas</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio38" name="question6" value="c">
-                <label for="radio38">Sitting in a tree</label>
+                <label for="radio38">No perfil do nosso usuário nas mídias sociais</label>
              </div>
              <div class="funkyradio">
                 <input type="radio" id="radio39" name="question6" value="d">
-                <label for="radio39">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio40" name="question6" value="e">
-                <label for="radio40">Minding his own business, so stop asking</label>
+                <label for="radio39">Todas as alternativas citadas acima</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(5)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(7)">Próxima</button>
-       </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(5)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(7)">Próxima</button>
+            </div>
+        </div>
        <div class="question-box question7">
-          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="question">8. Há duas maneiras de se conduzir pesquisas com usuários: de forma quantitativa (como em questionários, respostas fechadas) e de forma qualitativa (entrevistas, respostas abertas). Analise as afirmações e determine qual método possui tal atributo: </div>
           <div class="answers">
              <div class="funkyradio">
-                <input type="radio" id="radio42" name="question7" value="a">
-                <label for="radio42">Antarctica</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio43" name="question7" value="b">
-                <label for="radio43">Exploring the Pacific Ocean</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio44" name="question7" value="c">
-                <label for="radio44">Sitting in a tree</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio45" name="question7" value="d">
-                <label for="radio45">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio46" name="question7" value="e">
-                <label for="radio46">Minding his own business, so stop asking</label>
-             </div>
+                <p class="true-false">Permite obter maior detalhamento da resposta</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio42" name="question7" value="t">
+                        <label for="radio42">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio43" name="question7" value="f">
+                        <label for="radio43">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Permite obter um perfil demográfico do público-alvo</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio44" name="question71" value="t">
+                        <label for="radio44">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio45" name="question71" value="f">
+                        <label for="radio45">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Trabalha com amostras pequenas e permite fatores subjetivos</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio46" name="question72" value="t">
+                        <label for="radio46">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio47" name="question72" value="f">
+                        <label for="radio47">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Permite que a informação coletada seja generalizável</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio48" name="question73" value="t">
+                        <label for="radio48">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio49" name="question73" value="f">
+                        <label for="radio49">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Permite comparações sistemáticas entre grupos da amostra</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio50" name="question74" value="t">
+                        <label for="radio50">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio51" name="question74" value="f">
+                        <label for="radio51">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Permite observação de opiniões e sentimentos da amostra</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio52" name="question75" value="t">
+                        <label for="radio52">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio53" name="question75" value="f">
+                        <label for="radio53">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="funkyradio">
+                <p class="true-false">Permite estudar tendências e comportamentos</p>
+                <div class="true-or-false">
+                    <div>
+                        <input type="radio" id="radio54" name="question76" value="t">
+                        <label for="radio54">Quantitativa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio55" name="question76" value="f">
+                        <label for="radio55">Qualitativa</label>
+                    </div>
+                </div>
+            </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(6)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(8)">Próxima</button>
-       </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(6)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(8)">Próxima</button>
+            </div>
+        </div>
        <div class="question-box question8">
-          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question">9. Ao se elaborar todo o inventário de conteúdo de um site ou app, é comum convidar usuários em potencial do produto para realizar a atividade de Card Sorting em seguida. Qual é a importância de se aplicar este método em um projeto? 
+            <br /><br />Escolha 3 opções:
+            </div>
           <div class="answers">
              <div class="funkyradio">
-                <input type="radio" id="radio48" name="question8" value="a">
-                <label for="radio48">Antarctica</label>
+                <input type="checkbox" id="radio56" name="question8" value="a">
+                <label for="radio56">Entender a jornada do usuário ao utilizar o seu produto</label>
              </div>
              <div class="funkyradio">
-                <input type="radio" id="radio49" name="question8" value="b">
-                <label for="radio49">Exploring the Pacific Ocean</label>
+                <input type="checkbox" id="radio57" name="question8" value="b">
+                <label for="radio57">Validar a arquitetura da informação de um site ou app</label>
              </div>
              <div class="funkyradio">
-                <input type="radio" id="radio50" name="question8" value="c">
-                <label for="radio50">Sitting in a tree</label>
+                <input type="checkbox" id="radio58" name="question8" value="c">
+                <label for="radio58">Determinar os aspectos de identidade visual do site ou app</label>
              </div>
              <div class="funkyradio">
-                <input type="radio" id="radio51" name="question8" value="d">
-                <label for="radio51">Minding his own business, so stop asking</label>
+                <input type="checkbox" id="radio59" name="question8" value="d">
+                <label for="radio59">Permitir que usuários façam sugestões de modificação para o seu produto</label>
              </div>
              <div class="funkyradio">
-                <input type="radio" id="radio52" name="question8" value="e">
-                <label for="radio52">Minding his own business, so stop asking</label>
+                <input type="checkbox" id="radio60" name="question8" value="e">
+                <label for="radio60">Categorizar o conteúdo de forma a fazer sentido para a navegação do usuário</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio61" name="question8" value="f">
+                <label for="radio61">Identificar se o site ou app atende aos requisitos de acessibilidade</label>
              </div>
           </div>
-          <button class="prev" (click)="voltarQuestao(7)">Voltar</button>
-          <button class="next" (click)="proximaQuestao(9)">Próxima</button>
-       </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
+            <button class="next btn btn-secondary" (click)="proximaQuestao(9)">Próxima</button>
+            </div>
+        </div>
        <div class="question-box question9">
-          <div class="question">  What is the best site ever created? </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio54" name="question9" value="a">
-                <label for="radio54">Antarctica</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio55" name="question9" value="b">
-                <label for="radio55">Exploring the Pacific Ocean</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio56" name="question9" value="c">
-                <label for="radio56">Sitting in a tree</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio57" name="question9" value="d">
-                <label for="radio57">Minding his own business, so stop asking</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio58" name="question9" value="e">
-                <label for="radio58">Minding his own business, so stop asking</label>
-             </div>
-          </div>
-          <button class="prev" (click)="voltarQuestao(7)">Voltar</button>
-          <button id="submit" (click)="finalizarAvaliacao()">Submit Quiz</button>
-       </div>
+            <div class="question">10. Pensar na acessibilidade do seu site ou app é fundamental para melhorar sua usabilidade, assim como permite que sua base de clientes e usuários se expanda, incluindo pessoas com deficiências variadas. Em alguns casos, como sites do governo, essa inclusão é lei. Selecione dentre as alternativas 5 práticas que deixam o seu site mais acessível:</div>
+            <div class="answers">
+               <div class="funkyradio">
+                  <p class="true-false">Permitir que a navegação seja feita inteiramente por mouse ou toque na tela</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio89" name="question9" value="t">
+                          <label for="radio89">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio90" name="question9" value="f">
+                          <label for="radio90">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Permitir que a navegação seja feita inteiramente por teclado</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio91" name="question91" value="t">
+                          <label for="radio91">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio92" name="question91" value="f">
+                          <label for="radio92">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Incluir descrição em todas as imagens</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio93" name="question92" value="t">
+                          <label for="radio93">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio94" name="question92" value="f">
+                          <label for="radio94">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Utilizar tipografia sem serifa</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio95" name="question93" value="t">
+                          <label for="radio95">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio96" name="question93" value="f">
+                          <label for="radio96">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Exibir informações importantes em caixa-alta</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio97" name="question94" value="t">
+                          <label for="radio97">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio98" name="question94" value="f">
+                          <label for="radio98">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Dar opção de customização de tamanhos e zoom</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio99" name="question95" value="t">
+                          <label for="radio99">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio108" name="question95" value="f">
+                          <label for="radio108">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                  <p class="true-false">Diferenciar pesos de informação através de cores</p>
+                  <div class="true-or-false">
+                      <div>
+                          <input type="radio" id="radio100" name="question96" value="t">
+                          <label for="radio100">Verdadeiro</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="radio101" name="question96" value="f">
+                          <label for="radio101">Falso</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="funkyradio">
+                    <p class="true-false">Utilizar baixo-contraste para conforto de leitura</p>
+                    <div class="true-or-false">
+                        <div>
+                            <input type="radio" id="radio102" name="question97" value="t">
+                            <label for="radio102">Verdadeiro</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio103" name="question97" value="f">
+                            <label for="radio103">Falso</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <p class="true-false">Projetar alertas com recurso de som e imagem</p>
+                    <div class="true-or-false">
+                        <div>
+                            <input type="radio" id="radio104" name="question98" value="t">
+                            <label for="radio104">Verdadeiro</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio105" name="question98" value="f">
+                            <label for="radio105">Falso</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <p class="true-false">Incluir legendas e transcrições de vídeos</p>
+                    <div class="true-or-false">
+                        <div>
+                            <input type="radio" id="radio106" name="question99" value="t">
+                            <label for="radio106">Verdadeiro</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio107" name="question99" value="f">
+                            <label for="radio107">Falso</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <div class="btns">
+            <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
+            <button id="submit" class="btn btn-success" (click)="finalizarAvaliacao()">Submit Quiz</button>
+            </div>
+        </div>
     </div>
     <div id="results"></div>
  </div>

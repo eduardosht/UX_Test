@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -7,10 +7,13 @@ import * as $ from 'jquery';
   templateUrl: './avaliador.component.html',
   styleUrls: ['./avaliador.component.css']
 })
-export class AvaliadorComponent {
+export class AvaliadorComponent implements OnInit {
 
   constructor() {
-    
+  }
+  ngOnInit() {
+    document.getElementById('timer').innerHTML = '20' + ":" + '00';
+    //this.startTimer();
   }
 
   finalizarAvaliacao() {
@@ -29,7 +32,7 @@ export class AvaliadorComponent {
       $('.step-question9').addClass('checked');
       $('.step-question9').removeClass('current');
 
-      $('#avaliacao-step').fadeOut('slow');
+      $('#header-avaliacao').fadeOut('slow');
       $('#quiz').fadeOut('slow', function(){
         $('#results').fadeIn('slow');
         self.showResults();
@@ -49,6 +52,9 @@ export class AvaliadorComponent {
     if ( $('.question'+(n-1)+' .answers input:checked').val() ) {
       $( '.step-question'+(n-1) ).addClass('checked');
     }
+
+    let converToNum = parseInt( $('.actual-question').html() );
+    $('.actual-question').html( ( converToNum + 1).toString() );
   }
 
   voltarQuestao( n ) {
@@ -61,6 +67,9 @@ export class AvaliadorComponent {
     if ( $('.question'+(n-1)+' .answers input:checked').val() ) {
       $( '.step-question'+(n-1) ).addClass('checked');
     }
+
+    let converToNum = parseInt( $('.actual-question').html() );
+    $('.actual-question').html( ( converToNum - 1).toString() );
   }
 
   showResults() {
@@ -71,128 +80,53 @@ export class AvaliadorComponent {
     let myQuestions = [
       {
         type_question: "standard",
-        question: "Who is the strongest?",
-        answers: {
-          a: "Superman",
-          b: "The Terminator",
-          c: "Waluigi, obviously",
-          d: "Waluigi, obviously",
-          e: "Waluigi, obviously"
-        },
+        question: "1.  Precisamos cons...",
         correctAnswer: "a"
       },
       {
         type_question: "standard_image",
-        stand_img_url: "https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png",
-        question: "What is the best site ever created?",
-        answers: {
-          a: "SitePoint",
-          b: "Simple Steps Code",
-          c: "Trick question; they're both the best",
-          d: "Trick question; they're both the best",
-          e: "Trick question; they're both the best"
-        },
-        correctAnswer: "a"
-      },
-      {
-        type_question: "multiple_choice",
-        question: "Where is Waldo really?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a,b"
-      },
-      {
-        type_question: "standard",
-        question: "Where is Waldo really?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a"
-      },
-      {
-        type_question: "multiple_choice",
-        question: "Where is Waldo really?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a,b,c"
-      },
-      {
-        type_question: "standard_image",
-        stand_img_url: "https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png",
-        question: "Where is Waldo really?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a"
-      },
-      {
-        type_question: "standard_image",
-        stand_img_url: "https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png",
-        question: "What is the best site ever created?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a"
-      },
-      {
-        type_question: "standard_image",
-        stand_img_url: "https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png",
-        question: "What is the best site ever created?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
+        question: "2. Observe ...",
         correctAnswer: "d"
       },
       {
         type_question: "standard_image",
-        stand_img_url: "https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png",
-        question: "What is the best site ever created?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
+        question: "3. Vamos supor que você esteja entre...",
+        correctAnswer: "c"
+      },
+      {
+        type_question: "standard_image",
+        question: "4. Uma das metodologias mais aplicadas para acelerar as chance...",
+        correctAnswer: "b"
+      },
+      {
+        type_question: "standard_image",
+        question: "5. Observando a imagem ao lado, em qual das etapas do...",
         correctAnswer: "a"
       },
       {
+        type_question: "standard_image",
+        question: "6. A imagem apresentada é uma ferramen... ",
+        correctAnswer: "c"
+      },
+      {
         type_question: "standard",
-        question: "What is the best site ever created?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking",
-          e: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "a"
+        question: "7. O mapa de empatia, é uma ferramenta pa...",
+        correctAnswer: "b"
+      },
+      {
+        type_question: "true_or_false",
+        question: "8.  Há duas maneiras de se conduzir pesquisas com usuário...",
+        correctAnswer: "f,t,f,t,t,f,t"
+      },
+      {
+        type_question: "multiple_choice",
+        question: "9. Ao se elaborar todo o inventário de...",
+        correctAnswer: "b,d,e"
+      },
+      {
+        type_question: "true_or_false",
+        question: "10. Pensar na acessibilidade do seu site...",
+        correctAnswer: "f,v,v,f,f,v,f,f,v,v"
       }
     ];
     // for each question...
@@ -221,6 +155,25 @@ export class AvaliadorComponent {
       totalPercentage = parseFloat(totalPercentage) + parseFloat(((parseFloat(countMatched) / parseFloat(multipleChoiseCorrectAnswer.length) ) * 10).toFixed(2));
 
 
+      } else if ( currentQuestion.type_question == 'true_or_false' ) {
+        let multipleChoiseCorrectAnswer;
+        multipleChoiseCorrectAnswer = (currentQuestion.correctAnswer).split(',');
+
+        const selector = `.true-or-false input:checked`;
+        let multipleChoiseAnswered = $(selector).map( function() {
+          return $(this).val();
+        }).get();
+        let length = Math.min( multipleChoiseCorrectAnswer.length, multipleChoiseAnswered.length );
+        let countMatched : any = 0
+        let countNotMatched : any = 0;
+
+        for ( let index = 0; index < length; index++ ) {
+          if ( multipleChoiseCorrectAnswer[index] == multipleChoiseAnswered[index] )
+            countMatched++;
+        }
+
+        // calc % of multiple choice
+        totalPercentage = parseFloat(totalPercentage) + parseFloat(((parseFloat(countMatched) / parseFloat(multipleChoiseCorrectAnswer.length) ) * 10).toFixed(2));
       } else {
         // find selected answer
         let answerContainer = answerContainers[questionNumber];
@@ -236,20 +189,13 @@ export class AvaliadorComponent {
 
     
     // JR.
+    totalPercentage = totalPercentage.toFixed(2);
     if ( totalPercentage <= 33 ) {
       resultsContainer.innerHTML = `
         <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
-        <h2>Seu nível é Júnior.</h2>
-        <p>É sempre muito bom ver talentos emergentes! Você mal pode esperar pelas descobertas que fará ao aprofundar seus estudos e ganhar mais experiências com User Experience. De acordo com o seu teste, você está pronto para aplicar para vagas de UX Designer de nível Júnior. Parabéns!</p>
-
-        <div class="share-result">
-          <h3>Compartilhe seu resultado</h3>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
+        <h2>Parabéns!</h2>
+        <p>É sempre muito bom ver talentos emergentes! Você mal pode esperar pelas descobertas que fará ao aprofundar seus estudos e ganhar mais experiências com User Experience. De acordo com o seu teste, você está pronto para aplicar para vagas de UX Designer de nível <strong>Júnior</strong>.</p>
+        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
       `;
     }
 
@@ -257,18 +203,41 @@ export class AvaliadorComponent {
     if ( totalPercentage > 33 && totalPercentage <= 70 ) {
       resultsContainer.innerHTML = `
         <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
-        <h2>Seu nível é Pleno.</h2>
-        <p>User Experience é um campo relativamente novo, e mesmo assim você já entende bastante sobre a área. Continue pesquisando para fortalecer seus músculos de UX. Você está pronto para aplicar para vagas de UX Designer de nível Pleno. Parabéns!</p>
-      `;
+        <h2>Parabéns!</h2>
+        <p>User Experience é um campo relativamente novo, e mesmo assim você já entende bastante sobre a área. Continue pesquisando para fortalecer seus músculos de UX. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Pleno</strong>. Parabéns!</p>
+        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
+        `;
     }
 
     // SR;
     if ( totalPercentage > 70 ) {
       resultsContainer.innerHTML = `
         <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
-        <h2>Seu nível é Senior.</h2>
-        <p>Tem sido uma jornada e tanto! Você não só tem uma alta carga de conhecimentos técnicos, mas é capaz de ter reflexões complexas para criar experiências de impacto sobre um público alvo. Você está pronto para aplicar para vagas de UX Designer de nível Sênior. Parabéns!</p>
-      `;
+        <h2>Parabéns!</h2>
+        <p>Tem sido uma jornada e tanto! Você não só tem uma alta carga de conhecimentos técnicos, mas é capaz de ter reflexões complexas para criar experiências de impacto sobre um público alvo. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Sênior</strong>. Parabéns!</p>
+        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
+        `;
       }
     }
+
+
+    /*
+    startTimer() {
+      let presentTime = document.getElementById('timer').innerHTML;
+      let timeArray = presentTime.split(/[:]+/);
+      let m = parseFloat( timeArray[0] );
+      let s = this.checkSecond(( parseFloat( timeArray[1] ) - 1));
+      
+      if(s==59){m=m-1}
+      //if(m<0){alert('timer completed')}
+      
+      document.getElementById('timer').innerHTML = m + ":" + s;
+      setTimeout(this.startTimer(), 1000);
+    }
+    
+    checkSecond(sec) {
+      if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+      if (sec < 0) {sec = "59"};
+      return sec;
+    }*/
 }
