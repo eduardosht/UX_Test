@@ -1,0 +1,275 @@
+<div class="container">
+    <div id="avaliacao-step"><span class="step step-question0 current"></span><span class="step step-question1"></span><span class="step step-question2"></span><span class="step step-question3"></span><span class="step step-question4"></span><span class="step step-question5"></span><span class="step step-question6"></span><span class="step step-question7"></span><span class="step step-question8"></span><span class="step step-question9"></span></div>
+    <div id="quiz" class="funkyradio-default">
+       <div class="question-box question0 active">
+          <div class="question">  Who is the strongest? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio0" name="question0" value="a">
+                <label for="radio0">Superman</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio1" name="question0" value="b">
+                <label for="radio1">The Terminator</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio2" name="question0" value="c">
+                <label for="radio2">Waluigi, obviously</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio3" name="question0" value="d">
+                <label for="radio3">Waluigi, obviously</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio4" name="question0" value="e">
+                <label for="radio4">Waluigi, obviously</label>
+             </div>
+          </div>
+          <button class="next" (click)="proximaQuestao(1)">Próxima</button>
+       </div>
+       <div class="question-box question1">
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio6" name="question1" value="a">
+                <label for="radio6">SitePoint</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio7" name="question1" value="b">
+                <label for="radio7">Simple Steps Code</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio8" name="question1" value="c">
+                <label for="radio8">Trick question; they're both the best</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio9" name="question1" value="d">
+                <label for="radio9">Trick question; they're both the best</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio10" name="question1" value="e">
+                <label for="radio10">Trick question; they're both the best</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(0)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(2)">Próxima</button>
+       </div>
+       <div class="question-box question2">
+          <div class="question">  Where is Waldo really? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="checkbox" id="radio12" name="question2" value="a">
+                <label for="radio12">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio13" name="question2" value="b">
+                <label for="radio13">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio14" name="question2" value="c">
+                <label for="radio14">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio15" name="question2" value="d">
+                <label for="radio15">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio16" name="question2" value="e">
+                <label for="radio16">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(1)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(3)">Próxima</button>
+       </div>
+       <div class="question-box question3">
+          <div class="question">  Where is Waldo really? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio18" name="question3" value="a">
+                <label for="radio18">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio19" name="question3" value="b">
+                <label for="radio19">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio20" name="question3" value="c">
+                <label for="radio20">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio21" name="question3" value="d">
+                <label for="radio21">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio22" name="question3" value="e">
+                <label for="radio22">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(2)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(4)">Próxima</button>
+       </div>
+       <div class="question-box question4">
+          <div class="question">  Where is Waldo really? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="checkbox" id="radio24" name="question4" value="a">
+                <label for="radio24">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio25" name="question4" value="b">
+                <label for="radio25">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio26" name="question4" value="c">
+                <label for="radio26">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio27" name="question4" value="d">
+                <label for="radio27">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="checkbox" id="radio28" name="question4" value="e">
+                <label for="radio28">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(3)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(5)">Próxima</button>
+       </div>
+       <div class="question-box question5">
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> Where is Waldo really? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio30" name="question5" value="a">
+                <label for="radio30">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio31" name="question5" value="b">
+                <label for="radio31">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio32" name="question5" value="c">
+                <label for="radio32">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio33" name="question5" value="d">
+                <label for="radio33">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio34" name="question5" value="e">
+                <label for="radio34">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(4)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(6)">Próxima</button>
+       </div>
+       <div class="question-box question6">
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio36" name="question6" value="a">
+                <label for="radio36">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio37" name="question6" value="b">
+                <label for="radio37">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio38" name="question6" value="c">
+                <label for="radio38">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio39" name="question6" value="d">
+                <label for="radio39">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio40" name="question6" value="e">
+                <label for="radio40">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(5)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(7)">Próxima</button>
+       </div>
+       <div class="question-box question7">
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio42" name="question7" value="a">
+                <label for="radio42">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio43" name="question7" value="b">
+                <label for="radio43">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio44" name="question7" value="c">
+                <label for="radio44">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio45" name="question7" value="d">
+                <label for="radio45">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio46" name="question7" value="e">
+                <label for="radio46">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(6)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(8)">Próxima</button>
+       </div>
+       <div class="question-box question8">
+          <div class="question"> <img src="https://cdn.pixabay.com/photo/2016/10/23/06/04/google-1762248_960_720.png" class="image-question"> What is the best site ever created? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio48" name="question8" value="a">
+                <label for="radio48">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio49" name="question8" value="b">
+                <label for="radio49">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio50" name="question8" value="c">
+                <label for="radio50">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio51" name="question8" value="d">
+                <label for="radio51">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio52" name="question8" value="e">
+                <label for="radio52">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(7)">Voltar</button>
+          <button class="next" (click)="proximaQuestao(9)">Próxima</button>
+       </div>
+       <div class="question-box question9">
+          <div class="question">  What is the best site ever created? </div>
+          <div class="answers">
+             <div class="funkyradio">
+                <input type="radio" id="radio54" name="question9" value="a">
+                <label for="radio54">Antarctica</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio55" name="question9" value="b">
+                <label for="radio55">Exploring the Pacific Ocean</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio56" name="question9" value="c">
+                <label for="radio56">Sitting in a tree</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio57" name="question9" value="d">
+                <label for="radio57">Minding his own business, so stop asking</label>
+             </div>
+             <div class="funkyradio">
+                <input type="radio" id="radio58" name="question9" value="e">
+                <label for="radio58">Minding his own business, so stop asking</label>
+             </div>
+          </div>
+          <button class="prev" (click)="voltarQuestao(7)">Voltar</button>
+          <button id="submit" (click)="finalizarAvaliacao()">Submit Quiz</button>
+       </div>
+    </div>
+    <div id="results"></div>
+ </div>
