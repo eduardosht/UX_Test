@@ -1,0 +1,22 @@
+.menu-principal {
+    background-color: #eaeaea;
+    box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.4);
+    margin-bottom: 40px;
+}
+.menu-principal ul {
+    list-style: none;
+    padding: 0;
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-principal ul li {
+    margin: 0 15px;
+    text-align: center;
+}
+.menu-principal ul li a {
+    color: #303030;
+    line-height: 18px;
+    display: block;
+}
