@@ -14,7 +14,7 @@ export class AvaliadorComponent implements OnInit {
   }
   ngOnInit() {
     document.getElementById('timer').innerHTML = '20' + ":" + '00';
-    this.startTimer();
+    //this.startTimer();
   }
 
   finalizarAvaliacao() {
