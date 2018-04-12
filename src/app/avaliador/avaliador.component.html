@@ -1,5 +1,5 @@
-<div class="container fullpage">
-    <div id="header-avaliacao">
+<div id="header-avaliacao">
+    <div class="container">
         <div id="timer"></div>
         <div id="avaliacao-step"><span class="step step-question0 current"></span><span class="step step-question1"></span><span class="step step-question2"></span><span class="step step-question3"></span><span class="step step-question4"></span><span class="step step-question5"></span><span class="step step-question6"></span><span class="step step-question7"></span><span class="step step-question8"></span><span class="step step-question9"></span></div>
         <div class="questions">
@@ -8,410 +8,496 @@
             <span class="total-question">10</span>
         </div>
     </div>
-    
-    <div id="quiz" class="funkyradio-default">
-       <div class="question-box question0 active">
-          <div class="question">
-              <p>Precisamos construir uma persona através de dados coletados em questionários e entrevistas. O que devemos fazer primeiro com esses dados?</p>
+</div>
+<div class="quizsection">
+    <div class="container fullpage">
+        <div id="quiz" class="funkyradio-default">
+        <div class="question-box question0 active">
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>Precisamos construir uma persona através de dados coletados em questionários e entrevistas. O que devemos fazer primeiro com esses dados?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio0" name="question0" value="a">
+                            <label for="radio0">Identificar padrões nas características dos entrevistados</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio1" name="question0" value="b">
+                            <label for="radio1">Identificar o problema mais grave citado em todas as entrevistas</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio2" name="question0" value="c">
+                            <label for="radio2">Agregar todos os comportamentos e problemas levantados em uma pessoa fictícia</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio3" name="question0" value="d">
+                            <label for="radio3">Separar os perfis de usuários com base em informações demográficas</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio0" name="question0" value="a">
-                <label for="radio0">Identificar padrões nas características dos entrevistados</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio1" name="question0" value="b">
-                <label for="radio1">Identificar o problema mais grave citado em todas as entrevistas</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio2" name="question0" value="c">
-                <label for="radio2">Agregar todos os comportamentos e problemas levantados em uma pessoa fictícia</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio3" name="question0" value="d">
-                <label for="radio3">Separar os perfis de usuários com base em informações demográficas</label>
-             </div>
-          </div>
-        <div class="btns">
-            <button class="next btn btn-secondary" (click)="proximaQuestao(1)">Próxima</button>
+            <div class="row">
+                <div class="btns">
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(1)">Próxima</button>
+                </div>
+            </div>
         </div>
-       </div>
-       <div class="question-box question1">
-            <div class="question">
-                <p>
-                    Observe o UX Canvas a seguir:
-                    <span>(toque na imagem para ampliar)</span>
-                </p>
-                <a class="example-image-link" href="./assets/images/img-q2.png" data-lightbox="example">
-                    <img src="./assets/images/img-q2.png" class="image-question">
-                </a>
-                <p>Qual é o objetivo principal desta ferramenta?</p>
+        <div class="question-box question1">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>
+                            Observe o UX Canvas a seguir:
+                            <span>(toque na imagem para ampliar)</span>
+                        </p>
+                        <a class="example-image-link" href="./assets/images/img-q2.png" data-lightbox="example">
+                            <img src="./assets/images/img-q2.png" class="image-question">
+                        </a>
+                        <p>Qual é o objetivo principal desta ferramenta?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers answers-w-img">
+                            <div class="funkyradio">
+                                <input type="radio" id="radio6" name="question1" value="a">
+                                <label for="radio6">Identificar as necessidades e desejos do usuário</label>
+                            </div>
+                            <div class="funkyradio">
+                                <input type="radio" id="radio7" name="question1" value="b">
+                                <label for="radio7">Entender o modelo de negócios do cliente e mapear possíveis investidores</label>
+                            </div>
+                            <div class="funkyradio">
+                                <input type="radio" id="radio8" name="question1" value="c">
+                                <label for="radio8">Mapear os recursos e limitações do projeto</label>
+                            </div>
+                            <div class="funkyradio">
+                                <input type="radio" id="radio9" name="question1" value="d">
+                                <label for="radio9">Encontrar soluções que satisfaçam cliente e usuário</label>
+                            </div>
+                        </div>
+                </div>
             </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio6" name="question1" value="a">
-                <label for="radio6">Identificar as necessidades e desejos do usuário</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio7" name="question1" value="b">
-                <label for="radio7">Entender o modelo de negócios do cliente e mapear possíveis investidores</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio8" name="question1" value="c">
-                <label for="radio8">Mapear os recursos e limitações do projeto</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio9" name="question1" value="d">
-                <label for="radio9">Encontrar soluções que satisfaçam cliente e usuário</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(0)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(2)">Próxima</button>
-          </div>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(0)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(2)">Próxima</button>
+                </div>
+            </div>
         </div>
-       <div class="question-box question2">
-          <div class="question">Vamos supor que você esteja entrevistando um usuário, a fim de investigar problemas e oportunidades para um aplicativo de compras de sapatos. Qual das perguntas a seguir é a mais adequada para esse tipo de investigação? </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio12" name="question2" value="a">
-                <label for="radio12">Você compra sapatos online?</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio13" name="question2" value="b">
-                <label for="radio13">Qual foi a última vez que você comprou um sapato online?</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio14" name="question2" value="c">
-                <label for="radio14">Conte-me sobre a última vez que você comprou um sapato online</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio15" name="question2" value="d">
-                <label for="radio15">Qual foi a sua maior frustração ao comprar um sapato online?</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(1)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(3)">Próxima</button>
+        <div class="question-box question2">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>Vamos supor que você esteja entrevistando um usuário, a fim de investigar problemas e oportunidades para um aplicativo de compras de sapatos. Qual das perguntas a seguir é a mais adequada para esse tipo de investigação?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio12" name="question2" value="a">
+                            <label for="radio12">Você compra sapatos online?</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio13" name="question2" value="b">
+                            <label for="radio13">Qual foi a última vez que você comprou um sapato online?</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio14" name="question2" value="c">
+                            <label for="radio14">Conte-me sobre a última vez que você comprou um sapato online</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio15" name="question2" value="d">
+                            <label for="radio15">Qual foi a sua maior frustração ao comprar um sapato online?</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-       </div>
-       <div class="question-box question3">
-            <div class="question">
-                <p>
-                    A imagem a seguir ilustra o ciclo de uma Lean Startup:
-                    <span>(toque na imagem para ampliar)</span>
-                </p>
-                <a class="example-image-link" href="./assets/images/img-q4.png" data-lightbox="example">
-                    <img src="./assets/images/img-q4.png" class="image-question">
-                </a>
-                <p>Durante o seu ciclo, desenvolvemos o chamado Produto Mínimo Viável(MVP). O que significa este conceito?</p>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(1)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(3)">Próxima</button>
+                </div>
             </div>
+        </div>
+        <div class="question-box question3">
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>
+                            A imagem a seguir ilustra o ciclo de uma Lean Startup:
+                            <span>(toque na imagem para ampliar)</span>
+                        </p>
+                        <a class="example-image-link" href="./assets/images/img-q4.png" data-lightbox="example">
+                            <img src="./assets/images/img-q4.png" class="image-question">
+                        </a>
+                        <p>Durante o seu ciclo, desenvolvemos o chamado Produto Mínimo Viável(MVP). O que significa este conceito?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers answers-w-img">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio18" name="question3" value="a">
+                            <label for="radio18">Conjunto de funcionalidades mínimas para deixar o produto final mais completo</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio19" name="question3" value="b">
+                            <label for="radio19">Conjunto de funcionalidades mínimas de um produto para lançá-lo e testá-lo</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio20" name="question3" value="c">
+                            <label for="radio20">Conjunto de funcionalidades mínimas considerando as mais completas para validação</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio21" name="question3" value="d">
+                            <label for="radio21">Conjunto de funcionalidades mínimas de produtos para descartar quais não funcionam</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(2)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(4)">Próxima</button>
+                </div>
+            </div>
+        </div>
+        <div class="question-box question4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>
+                            Observe novamente a imagem a seguir:
+                            <span>(toque na imagem para ampliar)</span>
+                        </p>
+                        <a class="example-image-link" href="./assets/images/img-q4.png" data-lightbox="example">
+                            <img src="./assets/images/img-q4.png" class="image-question">
+                        </a>
+                        <p>Em quais etapas do ciclo de uma Lean Startup deve ser desenvolvido um Produto Mínimo Viável(MVP)?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers answers-w-img">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio24" name="question4" value="a">
+                            <label for="radio24">Construção</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio25" name="question4" value="b">
+                            <label for="radio25">Medição</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio26" name="question4" value="c">
+                            <label for="radio26">Aprendizado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(3)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(5)">Próxima</button>
+                </div>
+            </div>
+        </div>
 
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio18" name="question3" value="a">
-                <label for="radio18">Conjunto de funcionalidades mínimas para deixar o produto final mais completo</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio19" name="question3" value="b">
-                <label for="radio19">Conjunto de funcionalidades mínimas de um produto para lançá-lo e testá-lo</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio20" name="question3" value="c">
-                <label for="radio20">Conjunto de funcionalidades mínimas considerando as mais completas para validação</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio21" name="question3" value="d">
-                <label for="radio21">Conjunto de funcionalidades mínimas de produtos para descartar quais não funcionam</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(2)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(4)">Próxima</button>
+        <div class="question-box question5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>
+                            Observe a imagem a seguir:
+                            <span>(toque na imagem para ampliar)</span>
+                        </p>
+                        <a class="example-image-link" href="./assets/images/img-q6.png" data-lightbox="example">
+                            <img src="./assets/images/img-q6.png" class="image-question">
+                        </a>
+                        <p>A imagem representa uma ferramenta que mapeia todas as decisões e engajamento do usuário, e nos serve para identificar barreiras e oportunidades no nosso projeto. Qual é o nome dessa ferramenta?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers answers-w-img">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio30" name="question5" value="a">
+                            <label for="radio30">Canvas do Modelo de Negócios</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio31" name="question5" value="b">
+                            <label for="radio31">UX Canvas</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio32" name="question5" value="c">
+                            <label for="radio32">Jornada do Usuário</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio33" name="question5" value="d">
+                            <label for="radio33">Mapa de empatia</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(4)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(6)">Próxima</button>
+                </div>
             </div>
         </div>
-       <div class="question-box question4">
-            <div class="question">
-                <p>
-                    Observe novamente a imagem a seguir:
-                    <span>(toque na imagem para ampliar)</span>
-                </p>
-                <a class="example-image-link" href="./assets/images/img-q4.png" data-lightbox="example">
-                    <img src="./assets/images/img-q4.png" class="image-question">
-                </a>
-                <p>Em quais etapas do ciclo de uma Lean Startup deve ser desenvolvido um Produto Mínimo Viável(MVP)?</p>
+        <div class="question-box question6">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>O mapa de empatia, é uma ferramenta para ajudar entender o usuário. Mas da onde buscamos e tiramos as informações para preencher o mapa?</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers">
+                        <div class="funkyradio">
+                            <input type="radio" id="radio36" name="question6" value="a">
+                            <label for="radio36">Nos objetivos do nosso cliente</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio37" name="question6" value="b">
+                            <label for="radio37">Nas personas e/ou proto-personas</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio38" name="question6" value="c">
+                            <label for="radio38">No perfil do nosso usuário nas mídias sociais</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="radio" id="radio39" name="question6" value="d">
+                            <label for="radio39">Todas as alternativas citadas acima</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio24" name="question4" value="a">
-                <label for="radio24">Construção</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio25" name="question4" value="b">
-                <label for="radio25">Medição</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio26" name="question4" value="c">
-                <label for="radio26">Aprendizado</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(3)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(5)">Próxima</button>
-            </div>
-       </div>
-       <div class="question-box question5">
-
-            <div class="question">
-                <p>
-                    Observe a imagem a seguir:
-                    <span>(toque na imagem para ampliar)</span>
-                </p>
-                <a class="example-image-link" href="./assets/images/img-q6.png" data-lightbox="example">
-                    <img src="./assets/images/img-q6.png" class="image-question">
-                </a>
-                <p>A imagem representa uma ferramenta que mapeia todas as decisões e engajamento do usuário, e nos serve para identificar barreiras e oportunidades no nosso projeto. Qual é o nome dessa ferramenta?</p>
-            </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio30" name="question5" value="a">
-                <label for="radio30">Canvas do Modelo de Negócios</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio31" name="question5" value="b">
-                <label for="radio31">UX Canvas</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio32" name="question5" value="c">
-                <label for="radio32">Jornada do Usuário</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio33" name="question5" value="d">
-                <label for="radio33">Mapa de empatia</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(4)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(6)">Próxima</button>
-            </div>
-       </div>
-       <div class="question-box question6">
-            <div class="question">
-                <p>O mapa de empatia, é uma ferramenta para ajudar entender o usuário. Mas da onde buscamos e tiramos as informações para preencher o mapa?</p>
-            </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <input type="radio" id="radio36" name="question6" value="a">
-                <label for="radio36">Nos objetivos do nosso cliente</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio37" name="question6" value="b">
-                <label for="radio37">Nas personas e/ou proto-personas</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio38" name="question6" value="c">
-                <label for="radio38">No perfil do nosso usuário nas mídias sociais</label>
-             </div>
-             <div class="funkyradio">
-                <input type="radio" id="radio39" name="question6" value="d">
-                <label for="radio39">Todas as alternativas citadas acima</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(5)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(7)">Próxima</button>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(5)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(7)">Próxima</button>
+                </div>
             </div>
         </div>
-       <div class="question-box question7">
-          <div class="question">
-              <p>Há duas maneiras de se conduzir pesquisas com usuários: de forma quantitativa (como em questionários, respostas fechadas) e de forma qualitativa (entrevistas, respostas abertas). Analise as afirmações e determine qual método possui tal atributo:</p>
-            </div>
-          <div class="answers">
-             <div class="funkyradio">
-                <p class="true-false">Permite obter maior detalhamento da resposta</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio42" name="question7" value="t">
-                        <label for="radio42">Quantitativa</label>
+        <div class="question-box question7">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>Há duas maneiras de se conduzir pesquisas com usuários: de forma quantitativa (como em questionários, respostas fechadas) e de forma qualitativa (entrevistas, respostas abertas). Analise as afirmações e determine qual método possui tal atributo:</p>
                     </div>
-                    <div>
-                        <input type="radio" id="radio43" name="question7" value="f">
-                        <label for="radio43">Qualitativa</label>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers">
+                        <div class="funkyradio">
+                            <p class="true-false">Permite obter maior detalhamento da resposta</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio42" name="question7" value="t">
+                                    <label for="radio42">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio43" name="question7" value="f">
+                                    <label for="radio43">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Permite obter um perfil demográfico do público-alvo</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio44" name="question71" value="t">
+                                    <label for="radio44">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio45" name="question71" value="f">
+                                    <label for="radio45">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Trabalha com amostras pequenas e permite fatores subjetivos</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio46" name="question72" value="t">
+                                    <label for="radio46">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio47" name="question72" value="f">
+                                    <label for="radio47">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Permite que a informação coletada seja generalizável</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio48" name="question73" value="t">
+                                    <label for="radio48">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio49" name="question73" value="f">
+                                    <label for="radio49">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Permite comparações sistemáticas entre grupos da amostra</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio50" name="question74" value="t">
+                                    <label for="radio50">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio51" name="question74" value="f">
+                                    <label for="radio51">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Permite observação de opiniões e sentimentos da amostra</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio52" name="question75" value="t">
+                                    <label for="radio52">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio53" name="question75" value="f">
+                                    <label for="radio53">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funkyradio">
+                            <p class="true-false">Permite estudar tendências e comportamentos</p>
+                            <div class="true-or-false">
+                                <div>
+                                    <input type="radio" id="radio54" name="question76" value="t">
+                                    <label for="radio54">Quantitativa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio55" name="question76" value="f">
+                                    <label for="radio55">Qualitativa</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="funkyradio">
-                <p class="true-false">Permite obter um perfil demográfico do público-alvo</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio44" name="question71" value="t">
-                        <label for="radio44">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio45" name="question71" value="f">
-                        <label for="radio45">Qualitativa</label>
-                    </div>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(6)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(8)">Próxima</button>
                 </div>
-            </div>
-            <div class="funkyradio">
-                <p class="true-false">Trabalha com amostras pequenas e permite fatores subjetivos</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio46" name="question72" value="t">
-                        <label for="radio46">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio47" name="question72" value="f">
-                        <label for="radio47">Qualitativa</label>
-                    </div>
-                </div>
-            </div>
-            <div class="funkyradio">
-                <p class="true-false">Permite que a informação coletada seja generalizável</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio48" name="question73" value="t">
-                        <label for="radio48">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio49" name="question73" value="f">
-                        <label for="radio49">Qualitativa</label>
-                    </div>
-                </div>
-            </div>
-            <div class="funkyradio">
-                <p class="true-false">Permite comparações sistemáticas entre grupos da amostra</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio50" name="question74" value="t">
-                        <label for="radio50">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio51" name="question74" value="f">
-                        <label for="radio51">Qualitativa</label>
-                    </div>
-                </div>
-            </div>
-            <div class="funkyradio">
-                <p class="true-false">Permite observação de opiniões e sentimentos da amostra</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio52" name="question75" value="t">
-                        <label for="radio52">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio53" name="question75" value="f">
-                        <label for="radio53">Qualitativa</label>
-                    </div>
-                </div>
-            </div>
-            <div class="funkyradio">
-                <p class="true-false">Permite estudar tendências e comportamentos</p>
-                <div class="true-or-false">
-                    <div>
-                        <input type="radio" id="radio54" name="question76" value="t">
-                        <label for="radio54">Quantitativa</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="radio55" name="question76" value="f">
-                        <label for="radio55">Qualitativa</label>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(6)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(8)">Próxima</button>
             </div>
         </div>
-       <div class="question-box question8">
-          <div class="question">
-            <p>Ao se elaborar todo o inventário de conteúdo de um site ou app, é comum convidar usuários em potencial do produto para realizar a atividade de Card Sorting em seguida. Qual é a importância de se aplicar este método em um projeto? 
-            <span>Escolha 3 opções:</span></p>
+        <div class="question-box question8">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>Ao se elaborar todo o inventário de conteúdo de um site ou app, é comum convidar usuários em potencial do produto para realizar a atividade de Card Sorting em seguida. Qual é a importância de se aplicar este método em um projeto? 
+                        <span>Escolha 3 opções:</span></p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers multiple-choice">
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio56" name="question8" value="a">
+                            <label for="radio56">Entender a jornada do usuário ao utilizar o seu produto</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio57" name="question8" value="b">
+                            <label for="radio57">Validar a arquitetura da informação de um site ou app</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio58" name="question8" value="c">
+                            <label for="radio58">Determinar os aspectos de identidade visual do site ou app</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio59" name="question8" value="d">
+                            <label for="radio59">Permitir que usuários façam sugestões de modificação para o seu produto</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio60" name="question8" value="e">
+                            <label for="radio60">Categorizar o conteúdo de forma a fazer sentido para a navegação do usuário</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio61" name="question8" value="f">
+                            <label for="radio61">Identificar se o site ou app atende aos requisitos de acessibilidade</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          <div class="answers multiple-choice">
-             <div class="funkyradio">
-                <input type="checkbox" id="radio56" name="question8" value="a">
-                <label for="radio56">Entender a jornada do usuário ao utilizar o seu produto</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio57" name="question8" value="b">
-                <label for="radio57">Validar a arquitetura da informação de um site ou app</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio58" name="question8" value="c">
-                <label for="radio58">Determinar os aspectos de identidade visual do site ou app</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio59" name="question8" value="d">
-                <label for="radio59">Permitir que usuários façam sugestões de modificação para o seu produto</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio60" name="question8" value="e">
-                <label for="radio60">Categorizar o conteúdo de forma a fazer sentido para a navegação do usuário</label>
-             </div>
-             <div class="funkyradio">
-                <input type="checkbox" id="radio61" name="question8" value="f">
-                <label for="radio61">Identificar se o site ou app atende aos requisitos de acessibilidade</label>
-             </div>
-          </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
-            <button class="next btn btn-secondary" (click)="proximaQuestao(9)">Próxima</button>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
+                    <button class="next btn btn-secondary" (click)="proximaQuestao(9)">Próxima</button>
+                </div>
             </div>
         </div>
-       <div class="question-box question9">
-            <div class="question">
-                <p>Pensar na acessibilidade do seu site ou app é fundamental para melhorar sua usabilidade, assim como permite que sua base de clientes e usuários se expanda, incluindo pessoas com deficiências variadas. Em alguns casos, como sites do governo, essa inclusão é lei. Selecione dentre as alternativas 5 práticas que deixam o seu site mais acessível:
-                <span>Escolha 5 opções:</span></p>        
+        <div class="question-box question9">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="question">
+                        <p>Pensar na acessibilidade do seu site ou app é fundamental para melhorar sua usabilidade, assim como permite que sua base de clientes e usuários se expanda, incluindo pessoas com deficiências variadas. Em alguns casos, como sites do governo, essa inclusão é lei. Selecione dentre as alternativas 5 práticas que deixam o seu site mais acessível:
+                        <span>Escolha 5 opções:</span></p>        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="answers multiple-choice">
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio89" name="question9" value="a">
+                            <label for="radio89">Permitir que a navegação seja feita inteiramente por mouse ou toque na tela</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio91" name="question9" value="b">
+                            <label for="radio91">Permitir que a navegação seja feita inteiramente por teclado</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio93" name="question9" value="c">
+                            <label for="radio93">Incluir descrição em todas as imagens</label>
+                        </div>
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio95" name="question9" value="d">
+                            <label for="radio95">Utilizar tipografia sem serifa</label>
+                        </div>
+                        <div class="funkyradio">
+                                <input type="checkbox" id="radio97" name="question9" value="e">
+                            <label for="radio97">Exibir informações importantes em caixa-alta</label>
+                        </div>     
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio99" name="question9" value="f">
+                            <label for="radio99">Dar opção de customização de tamanhos e zoom</label>
+                        </div>  
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio100" name="question9" value="g">
+                            <label for="radio100">Diferenciar pesos de informação através de cores</label>
+                        </div>   
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio102" name="question9" value="h">
+                            <label for="radio102">Utilizar baixo-contraste para conforto de leitura</label>
+                        </div> 
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio104" name="question9" value="i">
+                            <label for="radio104">Projetar alertas com recurso de som e imagem</label>
+                        </div> 
+                        <div class="funkyradio">
+                            <input type="checkbox" id="radio106" name="question9" value="j">
+                            <label for="radio106">Incluir legendas e transcrições de vídeos</label>
+                        </div> 
+                    </div>
+                </div>
             </div>
-            <div class="answers multiple-choice">
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio89" name="question9" value="a">
-                    <label for="radio89">Permitir que a navegação seja feita inteiramente por mouse ou toque na tela</label>
+            <div class="row">
+                <div class="btns">
+                    <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
+                    <button id="submit" class="btn btn-success" (click)="finalizarAvaliacao()">Finalizar</button>
+                    </div>
                 </div>
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio91" name="question9" value="b">
-                    <label for="radio91">Permitir que a navegação seja feita inteiramente por teclado</label>
-                </div>
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio93" name="question9" value="c">
-                    <label for="radio93">Incluir descrição em todas as imagens</label>
-                </div>
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio95" name="question9" value="d">
-                    <label for="radio95">Utilizar tipografia sem serifa</label>
-                </div>
-                <div class="funkyradio">
-                        <input type="checkbox" id="radio97" name="question9" value="e">
-                    <label for="radio97">Exibir informações importantes em caixa-alta</label>
-                </div>     
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio99" name="question9" value="f">
-                    <label for="radio99">Dar opção de customização de tamanhos e zoom</label>
-                </div>  
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio100" name="question9" value="g">
-                    <label for="radio100">Diferenciar pesos de informação através de cores</label>
-                </div>   
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio102" name="question9" value="h">
-                    <label for="radio102">Utilizar baixo-contraste para conforto de leitura</label>
-                </div> 
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio104" name="question9" value="i">
-                    <label for="radio104">Projetar alertas com recurso de som e imagem</label>
-                </div> 
-                <div class="funkyradio">
-                    <input type="checkbox" id="radio106" name="question9" value="j">
-                    <label for="radio106">Incluir legendas e transcrições de vídeos</label>
-                </div> 
-            </div>
-          <div class="btns">
-            <button class="prev btn btn-secondary" (click)="voltarQuestao(7)">Voltar</button>
-            <button id="submit" class="btn btn-success" (click)="finalizarAvaliacao()">Finalizar</button>
             </div>
         </div>
+        <div id="results"></div>
     </div>
-    <div id="results"></div>
- </div>
+</div>

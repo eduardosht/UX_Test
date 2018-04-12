@@ -5,7 +5,7 @@ import { InstrucoesComponent } from './instrucoes/instrucoes.component';
 const appRoutes : Routes = [
     { path: 'avaliacao', component: AvaliadorComponent },
     { path: 'instrucoes', component: InstrucoesComponent },
-    { path: '', component: AvaliadorComponent }
+    { path: '', component: InstrucoesComponent }
 ];
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import * as $ from 'jquery';
 
 @Component({
@@ -13,7 +14,7 @@ export class AvaliadorComponent implements OnInit {
   }
   ngOnInit() {
     document.getElementById('timer').innerHTML = '20' + ":" + '00';
-    //this.startTimer();
+    this.startTimer();
   }
 
   finalizarAvaliacao() {
@@ -55,6 +56,7 @@ export class AvaliadorComponent implements OnInit {
 
     let converToNum = parseInt( $('.actual-question').html() );
     $('.actual-question').html( ( converToNum + 1).toString() );
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
 
   voltarQuestao( n ) {
@@ -70,6 +72,7 @@ export class AvaliadorComponent implements OnInit {
 
     let converToNum = parseInt( $('.actual-question').html() );
     $('.actual-question').html( ( converToNum - 1).toString() );
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
 
   showResults() {
@@ -151,7 +154,6 @@ export class AvaliadorComponent implements OnInit {
       }
 
       // calc % of multiple choice
-      console.log(parseFloat(((parseFloat(countMatched) / parseFloat(multipleChoiseCorrectAnswer.length) ) * 10).toFixed(2)));
       totalPercentage = parseFloat(totalPercentage) + parseFloat(((parseFloat(countMatched) / parseFloat(multipleChoiseCorrectAnswer.length) ) * 10).toFixed(2));
 
 
@@ -197,6 +199,27 @@ export class AvaliadorComponent implements OnInit {
         <p>É sempre muito bom ver talentos emergentes! Você mal pode esperar pelas descobertas que fará ao aprofundar seus estudos e ganhar mais experiências com User Experience. De acordo com o seu teste, você está pronto para aplicar para vagas de UX Designer de nível <strong>Júnior</strong>.</p>
         <img src="./assets/images/grafico-jr.png" alt="Gráfico representando sua posição como nível Júnior" title="Gráfico representando sua posição como nível Júnior">
         <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
+
+        <style>
+          #results h1 {
+            font-size: 24px;
+            line-height: 28px;
+            margin: 40px 0 30px 0;
+          }
+          #results h2 {
+            font-size: 22px;
+            font-weight: bold;
+          }
+          #results p {
+            font-size: 16px !important;
+          }
+          #results img {
+            width: 550px;
+            margin: 30px auto;
+            display: block;
+            max-width: 90%; 
+          }
+        </style>
       `;
     }
 
@@ -208,6 +231,27 @@ export class AvaliadorComponent implements OnInit {
         <p>User Experience é um campo relativamente novo, e mesmo assim você já entende bastante sobre a área. Continue pesquisando para fortalecer seus músculos de UX. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Pleno</strong>. Parabéns!</p>
         <img src="./assets/images/grafico-pl.png" alt="Gráfico representando sua posição como nível Pleno" title="Gráfico representando sua posição como nível Pleno">
         <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
+
+        <style>
+          #results h1 {
+            font-size: 24px;
+            line-height: 28px;
+            margin: 40px 0 30px 0;
+          }
+          #results h2 {
+            font-size: 22px;
+            font-weight: bold;
+          }
+          #results p {
+            font-size: 16px !important;
+          }
+          #results img {
+            width: 550px;
+            margin: 30px auto;
+            display: block;
+            max-width: 90%; 
+          }
+        </style>
         `;
     }
 
@@ -219,12 +263,33 @@ export class AvaliadorComponent implements OnInit {
         <p>Tem sido uma jornada e tanto! Você não só tem uma alta carga de conhecimentos técnicos, mas é capaz de ter reflexões complexas para criar experiências de impacto sobre um público alvo. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Sênior</strong>. Parabéns!</p>
         <img src="./assets/images/grafico-jr.png" alt="Gráfico representando sua posição como nível Sênior" title="Gráfico representando sua posição como nível Sênior">
         <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
+
+        <style>
+          #results h1 {
+            font-size: 24px;
+            line-height: 28px;
+            margin: 40px 0 30px 0;
+          }
+          #results h2 {
+            font-size: 22px;
+            font-weight: bold;
+          }
+          #results p {
+            font-size: 16px !important;
+          }
+          #results img {
+            width: 550px;
+            margin: 30px auto;
+            display: block;
+            max-width: 90%; 
+          }
+        </style>
         `;
       }
     }
 
 
-    /*
+    
     startTimer() {
       let presentTime = document.getElementById('timer').innerHTML;
       let timeArray = presentTime.split(/[:]+/);
@@ -242,5 +307,5 @@ export class AvaliadorComponent implements OnInit {
       if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
       if (sec < 0) {sec = "59"};
       return sec;
-    }*/
+    }
 }
