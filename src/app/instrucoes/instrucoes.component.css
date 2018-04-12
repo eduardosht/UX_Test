@@ -1,9 +1,23 @@
 h2 {
     margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 24px;
 }
 
 a {
     margin: 50px auto 0 auto;
     display: block;
-    max-width: 160px;
+    max-width: 100px;
+    background-color: #F27A29;
+    border: 0;
+    padding: 6px 5px;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.12);
+}
+.fullpage {
+    height: 100vh;
+    background-color: rgba(95, 75, 139, 0.7);
+    display: block;
+    padding-top: 60px;
+    color: #FFF;
 }

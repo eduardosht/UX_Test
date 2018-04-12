@@ -124,9 +124,9 @@ export class AvaliadorComponent implements OnInit {
         correctAnswer: "b,d,e"
       },
       {
-        type_question: "true_or_false",
+        type_question: "multiple_choice",
         question: "10. Pensar na acessibilidade do seu site...",
-        correctAnswer: "f,v,v,f,f,v,f,f,v,v"
+        correctAnswer: "b,c,f,i,j"
       }
     ];
     // for each question...
@@ -190,32 +190,35 @@ export class AvaliadorComponent implements OnInit {
     
     // JR.
     totalPercentage = totalPercentage.toFixed(2);
-    if ( totalPercentage <= 33 ) {
+    if ( totalPercentage <= 40 ) {
       resultsContainer.innerHTML = `
-        <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
+        <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
         <p>É sempre muito bom ver talentos emergentes! Você mal pode esperar pelas descobertas que fará ao aprofundar seus estudos e ganhar mais experiências com User Experience. De acordo com o seu teste, você está pronto para aplicar para vagas de UX Designer de nível <strong>Júnior</strong>.</p>
-        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
+        <img src="./assets/images/grafico-jr.png" alt="Gráfico representando sua posição como nível Júnior" title="Gráfico representando sua posição como nível Júnior">
+        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
       `;
     }
 
     // PL.
-    if ( totalPercentage > 33 && totalPercentage <= 70 ) {
+    if ( totalPercentage > 40 && totalPercentage <= 89 ) {
       resultsContainer.innerHTML = `
-        <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
+      <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
         <p>User Experience é um campo relativamente novo, e mesmo assim você já entende bastante sobre a área. Continue pesquisando para fortalecer seus músculos de UX. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Pleno</strong>. Parabéns!</p>
-        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
+        <img src="./assets/images/grafico-pl.png" alt="Gráfico representando sua posição como nível Pleno" title="Gráfico representando sua posição como nível Pleno">
+        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
         `;
     }
 
     // SR;
-    if ( totalPercentage > 70 ) {
+    if ( totalPercentage > 89 ) {
       resultsContainer.innerHTML = `
-        <h1 class="text-center">Você obteve ${totalPercentage}% de acerto!</h1>
+      <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
         <p>Tem sido uma jornada e tanto! Você não só tem uma alta carga de conhecimentos técnicos, mas é capaz de ter reflexões complexas para criar experiências de impacto sobre um público alvo. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Sênior</strong>. Parabéns!</p>
-        <p>A faixa salarial na sua área, com a sua experiência, é de <strong>R$2370</strong> a <strong>R$4005</strong>.</p>
+        <img src="./assets/images/grafico-jr.png" alt="Gráfico representando sua posição como nível Sênior" title="Gráfico representando sua posição como nível Sênior">
+        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: BNE)</p>
         `;
       }
     }
