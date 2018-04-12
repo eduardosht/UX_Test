@@ -7,6 +7,7 @@ import { routing } from './app.routes';
 import { AvaliadorComponent } from './avaliador/avaliador.component';
 import { InstrucoesComponent } from './instrucoes/instrucoes.component';
 import { MenuComponent } from './menu/menu.component';
+import { CadastroLoginComponent } from './cadastro-login/cadastro-login.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
     AvaliadorComponent,
     InstrucoesComponent,
     MenuComponent,
+    CadastroLoginComponent,
   ],
   imports: [
     BrowserModule,

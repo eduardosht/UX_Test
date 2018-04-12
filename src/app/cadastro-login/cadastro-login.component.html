@@ -1,0 +1,42 @@
+<div class="purple-box"></div>
+<div class="img-background">
+  <div class="fullpage">
+    <div class="container">
+      <div class="centralize-content">
+        <img src="./assets/images/logo-purple.png" alt="Fluxo logo">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Bem-vindo!</h2>
+            <p>Este é um teste que vai avaliar suas competências técnicas UX Design. Você é um de nossos convidados para testar nossa primeira versão do teste</p>
+          </div>
+          <div class="col-lg-6">
+            <h2 id="form-name">Cadastro</h2>
+            <form id="cadastro-form">
+              <input type="text" name="nome" placeholder="Nome" required>
+              <input type="email" name="email" placeholder="E-mail" required>
+              <input type="password" name="password" placeholder="Senha">
+              <br /><br />
+              <p>Você se considera:</p>
+              <div class="nivel-considera">
+                <div>
+                    <input type="radio" id="nivel1" name="nivel" value="Júnior" required>
+                    <label for="nivel1">Júnior</label>
+                </div>
+                <div>
+                    <input type="radio" id="nivel2" name="nivel" value="Pleno">
+                    <label for="nivel2">Pleno</label>
+                </div>
+                <div>
+                    <input type="radio" id="nivel3" name="nivel" value="Sênior">
+                    <label for="nivel3">Sênior</label>
+                </div>
+              </div>
+              <button (click)="criarConta()" class="btn btn-primary center-block criar-conta-btn">Criar conta</button>
+              <a (click)="possuiConta()" class="text-center ja-possui">Já possui uma conta?</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
