@@ -17,7 +17,7 @@ export class CadastroComponent  implements OnInit {
   meuForm: FormGroup;
   mensagem: string;
   
-  constructor(private router: Router, private loginService: LoginService,fb: FormBuilder) { 
+  constructor(private router: Router, private loginService: LoginService, fb: FormBuilder) { 
 
     this.meuForm = fb.group({
       nome: ['', Validators.required],
@@ -32,9 +32,15 @@ export class CadastroComponent  implements OnInit {
     this.mensagem = '';
   }
 
-  fazerCadastro(email,password,nome,tipo){
-  this.loginService.cadastrar(email,password,nome,tipo)
-  .then(res => {
+  fazerCadastro( form ) {
+    console.log(form);
+    console.log(form.email);
+    this.loginService.cadastrar (
+      form.nome,
+      form.email,
+      form.password,
+      form.tipo)
+    .then(res => {
       console.log(res);
       this.router.navigate(['/login']);
       // this.mensagem = "Cadastro";
@@ -43,6 +49,4 @@ export class CadastroComponent  implements OnInit {
       this.mensagem = "Você deixou algum campo em branco.";
     });
   }
-
-
 }

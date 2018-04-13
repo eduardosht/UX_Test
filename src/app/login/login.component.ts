@@ -12,13 +12,17 @@ import { Observable } from 'rxjs/Observable';
 export class LoginComponent implements OnInit  {
 
     user: Observable<firebase.User>;
+    firebase;
 
    mensagem: string;
-   constructor(private loginService: LoginService,public afAuth: AngularFireAuth) { this.user = afAuth.authState;}
+  constructor(private loginService: LoginService,public afAuth: AngularFireAuth) { 
+     this.user = afAuth.authState;
+  
+  }
 
   ngOnInit() {
     this.mensagem = '';
-    // LoginComponent.createUsuario(LoginComponent.testa());
+    LoginComponent.createUsuario(LoginComponent.testa());
   }
 
    fazerLogin(email, password) {

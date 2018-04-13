@@ -8,7 +8,8 @@
         Você é um de nossos convidados pra testar nossa primeira versão do teste. </p>
 </div>
 
-<form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">
+<!--<form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">-->
+    <form [formGroup]="meuForm" class="row">
     <h3>Cadastro</h3>
     <div class="form-group">
       <input type="text" #nome class="form-control" id="nomeInput" placeholder="Nome"
@@ -61,7 +62,7 @@
     <br/>
 
     
-    <button class="btn btn-lg btn-primary btn-block" (click)="fazerCadastro(email.value,password.value,nome.value,tipo.value)"
+    <button class="btn btn-lg btn-primary btn-block" (click)="fazerCadastro(meuForm.value)"
     type="submit">Criar conta</button>
     <a [routerLink]="['/login']">Já possui uma conta?</a>
 </form>
