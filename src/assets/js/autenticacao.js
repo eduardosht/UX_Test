@@ -33,6 +33,7 @@ firebase
 		console.log(result);
 		displayName.innerText = 'Bem vindo,'+emailInput.value;
 		alert('Autenticado '+emailinput.value);
+		
 	})
 	.catch(function(error){
 	console.error(error.code);

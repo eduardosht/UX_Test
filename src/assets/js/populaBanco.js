@@ -7,17 +7,20 @@ async function testa(){
 usuario1={
 nome:"Joelzinho",
 email:"andreytsuzuki@gmail.com",
-senhoridade:"junior"
+senhoridade:"junior",
+senha:"aiaiai"
 }
 usuario2={
     nome:"Lizinha",
     email:"zinho@gmail.com",
-    senhoridade:"senior"
+    senhoridade:"senior",
+    senha:"aiaiai"
 }
 usuario3={
     nome:"Divinha",
     email:"gadual@gmail.com",
-    senhoridade:"pleno"
+    senhoridade:"pleno",
+    senha:"aiaiai"
 }
 usuarios={
     usuario1,usuario2,usuario3

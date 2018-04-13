@@ -1,31 +1,69 @@
 
-<div class="col-md-4">
-<h2>Bem vindo!</h2>
-<p>Este é um teste que vai avaliar suas competências técnicas de UX Design.
-    Você é um de nossos convidados pra testar nossa primeira versão do teste. </p>
-<form>
-  <h2>Cadastro</h2>
-<div class="form-group">
-  <input type="text" #password class="form-control" id="nomeInput" placeholder="Nome">
-</div>
-<div class="form-group">
-	<input type="email" #email class="form-control" id="emailInput" placeholder="E-mail">
-</div>
-<div class="form-group">
-	<input type="password" #password class="form-control" id="passwordInput" placeholder="Senha">
-</div>
-<div>
-<label>Você se considera</label>
-<input type="radio" name="tipo" value="Junior" id="juniorOpBtn"> <label for="juniorOpBtn" class="label">Junior</label>
-<input type="radio" name="tipo" value="Senior" id="seniorOpBtn"> <label for="seniorOpBtn" class="label">Senior</label>
-<input type="radio" name="tipo" value="Pleno" id="plenoOpBtn"> <label for="plenoOpBtn" class="label">Pleno</label>
-</div>     
-<br/>
-<br/>
-<br/>
+<p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
 
-<button class="btn btn-lg btn-primary btn-block createUserButton" type="submit">Criar conta</button>
-<a [routerLink]="['/login']">Já possui uma conta?</a>
+<div class="col-md-4">
+  <div class="containertexto">
+    <h2>Bem vindo!</h2>
+    <p>Este é um teste que vai avaliar suas competências técnicas de UX Design.
+        Você é um de nossos convidados pra testar nossa primeira versão do teste. </p>
+</div>
+
+<form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">
+    <h3>Cadastro</h3>
+    <div class="form-group">
+      <input type="text" #nome class="form-control" id="nomeInput" placeholder="Nome"
+          formControlName="nome" 
+          name="nome" />
+      <div *ngIf="meuForm.controls.nome.invalid">
+          <h6>Nome é obrigatório!</h6>           
+      </div> 
+    </div>
+
+    <div class="form-group">
+      <input type="email" #email class="form-control" id="emailInput" placeholder="E-mail"
+          formControlName="email" 
+          name="email"/>
+      <div *ngIf="meuForm.controls.email.invalid">
+          <h6>Email é obrigatório!</h6>           
+      </div> 
+    </div>
+
+    <div class="form-group">
+      <input type="password" #senha class="form-control" id="passwordInput" placeholder="Senha"
+          formControlName="senha" 
+          name="senha"/>
+      <div *ngIf="meuForm.controls.senha.invalid">
+          <h6>Senha é obrigatória!</h6>           
+      </div>
+    </div>
+
+    <div>
+        <label>Você se considera</label>
+        <input type="radio" #senhoridade name="senhoridade" value="Junior" id="juniorOpBtn"
+        formControlName="senhoridade"> 
+
+        <label for="juniorOpBtn" class="label">Junior</label>
+        <input type="radio" #senhoridade name="senhoridade" value="Senior" id="seniorOpBtn"
+        formControlName="senhoridade"> 
+        <label for="seniorOpBtn" class="label">Senior</label>
+
+        <input type="radio" #senhoridade name="senhoridade" value="Pleno" id="plenoOpBtn"
+        formControlName="senhoridade"> 
+        <label for="plenoOpBtn" class="label">Pleno</label>
+
+        <div *ngIf="meuForm.controls.senhoridade.invalid">
+            <h6>Seu nível de conehcimento em UX é obrigatório!</h6>           
+        </div>
+    </div>   
+
+    <br/>
+    <br/>
+    <br/>
+
+    
+    <button class="btn btn-lg btn-primary btn-block" (click)="fazerCadastro(email.value,password.value,nome.value,tipo.value)"
+    type="submit">Criar conta</button>
+    <a [routerLink]="['/login']">Já possui uma conta?</a>
 </form>
 
 </div>
