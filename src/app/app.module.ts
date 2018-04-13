@@ -12,6 +12,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from "./guards/auth.guard";
 import 'jquery';
 
 
@@ -42,7 +43,7 @@ export const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
