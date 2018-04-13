@@ -34,12 +34,11 @@ export class CadastroComponent  implements OnInit {
 
   fazerCadastro( form ) {
     console.log(form);
-    console.log(form.email);
     this.loginService.cadastrar (
       form.nome,
       form.email,
-      form.password,
-      form.tipo)
+      form.senha,
+      form.senhoridade)
     .then(res => {
       console.log(res);
       this.router.navigate(['/login']);

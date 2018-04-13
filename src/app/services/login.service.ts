@@ -8,6 +8,8 @@ import 'rxjs/add/operator/catch';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
+
 
 @Injectable()
 export class LoginService {
