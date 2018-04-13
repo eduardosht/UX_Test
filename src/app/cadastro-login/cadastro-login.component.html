@@ -3,6 +3,7 @@
   <div class="fullpage">
     <div class="container">
       <div class="centralize-content">
+          <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
         <img src="./assets/images/logo-purple.png" alt="Fluxo logo">
         <div class="row">
           <div class="col-lg-6">
@@ -11,27 +12,34 @@
           </div>
           <div class="col-lg-6">
             <h2 id="form-name">Cadastro</h2>
-            <form id="cadastro-form">
-              <input type="text" name="nome" placeholder="Nome" required>
-              <input type="email" name="email" placeholder="E-mail" required>
-              <input type="password" name="password" placeholder="Senha">
+            <form id="cadastro-form" [formGroup]="meuForm">
+              <div class="form-group">
+              <input type="text" name="nome" placeholder="Nome"  #nome class="form-control" formControlName="nome">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="E-mail"  #email class="form-control" formControlName="email">
+            </div>
+            <div class="form-group">
+              <input type="password" name="senha" placeholder="Senha" #password class="form-control" formControlName="senha">
+            </div>
               <br /><br />
               <p>Você se considera:</p>
-              <div class="nivel-considera">
+              <div class="nivel-considera form-group">
                 <div>
-                    <input type="radio" id="nivel1" name="nivel" value="Júnior" required>
+                    <input type="radio" id="nivel1" name="nivel" value="Júnior"  #nivel class="form-control"formControlName="nivel">
                     <label for="nivel1">Júnior</label>
                 </div>
                 <div>
-                    <input type="radio" id="nivel2" name="nivel" value="Pleno">
+                    <input type="radio" id="nivel2" name="nivel" value="Pleno" #nivel class="form-control"formControlName="nivel">
                     <label for="nivel2">Pleno</label>
                 </div>
                 <div>
-                    <input type="radio" id="nivel3" name="nivel" value="Sênior">
+                    <input type="radio" id="nivel3" name="nivel" value="Sênior" #nivel class="form-control"formControlName="nivel">
                     <label for="nivel3">Sênior</label>
                 </div>
               </div>
-              <button (click)="criarConta()" class="btn btn-primary center-block criar-conta-btn">Criar conta</button>
+              <button class="btn btn-lg btn-primary btn-block" (click)="fazerCadastro(meuForm.value)"
+              type="submit" [disabled]="meuForm.invalid">Criar conta</button>
               <a (click)="possuiConta()" class="text-center ja-possui">Já possui uma conta?</a>
             </form>
           </div>
