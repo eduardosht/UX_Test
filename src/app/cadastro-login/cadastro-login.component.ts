@@ -49,10 +49,7 @@ ngOnInit() {
     });
   }
   possuiConta() {
-    $('input[type="password"]').fadeOut();
-    $('.ja-possui').css('display', 'none');
-    $('#form-name').html('Login');
-    $('.criar-conta-btn').html('Realizar Teste')
+    this.router.navigate(['/login']);
   }
 
   // criarConta() {
