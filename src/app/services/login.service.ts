@@ -24,7 +24,6 @@ export class LoginService {
           .then(res => {
             localStorage.setItem('fluxotextfire_mail', mail);
             this.router.navigate(['/instrucoes']);
-            console.log(res);
           }, err =>reject(err))
         })
     }

@@ -19,8 +19,6 @@ export class AcoesDB {
     }
 
     cadastraRespostas( obj ) {
-        console.log(this.af);
-        console.log(obj);
       return new Promise<any>((resolve, reject) => {
         this.af.database.ref('data').push(obj)
         .then(res => {

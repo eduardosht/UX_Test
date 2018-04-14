@@ -25,9 +25,10 @@ export class AvaliadorComponent implements OnInit {
     console.log(this.user.subscribe);
     //this.startTimer();
   }
-  enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 ) {
+  enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, porcentagemfinal, nivelCalculado ) {
     let data = {
       email: localStorage.getItem('fluxotextfire_mail'),
+      nivel_suposto: localStorage.getItem('fluxotextfire_nivel'),
       respostas: {
         'pergunta1': p1,
         'pergunta2': p2,
@@ -40,6 +41,10 @@ export class AvaliadorComponent implements OnInit {
         'pergunta9': p9,
         'pergunta10': p10,
       },
+      resultado_final: {
+        'porcentagem': porcentagemfinal,
+        'nivel': nivelCalculado
+      }
     };
 
     this.acoesDB.cadastraRespostas (data)
@@ -72,7 +77,6 @@ export class AvaliadorComponent implements OnInit {
     let p7 = $('.question6 .answers input:checked').val();
 
     if ( p1 && p2 && p3 && p4 && p5 && p6 && p7 && p8 && p9 && p10 ) {
-      this.enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 );
 
       $('.step-question9').addClass('checked');
       $('.step-question9').removeClass('current');
@@ -80,7 +84,7 @@ export class AvaliadorComponent implements OnInit {
       $('#header-avaliacao').fadeOut('slow');
       $('#quiz').fadeOut('slow', function(){
         $('#results').fadeIn('slow');
-        self.showResults();
+        self.showResults( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 );
       });
 
     } else {
@@ -119,7 +123,7 @@ export class AvaliadorComponent implements OnInit {
     $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
 
-  showResults() {
+  showResults( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 ) {
     let answerContainers = document.getElementById("quiz").querySelectorAll(".answers");
     let totalPercentage : any = 0;
     let avaliacaoStep = document.getElementById("avaliacao-step");
@@ -233,10 +237,11 @@ export class AvaliadorComponent implements OnInit {
       }
     });
 
-    
+    let nivelCalculado;
     // JR.
     totalPercentage = totalPercentage.toFixed(2);
     if ( totalPercentage <= 40 ) {
+      nivelCalculado = 'Júnior';
       resultsContainer.innerHTML = `
         <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
@@ -269,6 +274,7 @@ export class AvaliadorComponent implements OnInit {
 
     // PL.
     if ( totalPercentage > 40 && totalPercentage <= 89 ) {
+      nivelCalculado = 'Pleno';
       resultsContainer.innerHTML = `
       <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
@@ -301,6 +307,7 @@ export class AvaliadorComponent implements OnInit {
 
     // SR;
     if ( totalPercentage > 89 ) {
+      nivelCalculado = 'Senior';
       resultsContainer.innerHTML = `
       <h1>Você acertou ${totalPercentage}%</h1>
         <h2>Parabéns!</h2>
@@ -330,6 +337,9 @@ export class AvaliadorComponent implements OnInit {
         </style>
         `;
       }
+
+      // ENVIA DADOS PARA O FIREBASE
+      this.enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, totalPercentage, nivelCalculado );
     }
 
 

@@ -39,6 +39,7 @@ ngOnInit() {
       form.nivel)
     .then(res => {
 
+      localStorage.setItem('fluxotextfire_nivel', form.nivel);
       this.router.navigate(['/login']);
       // this.mensagem = "Cadastro";
     }, err => {
