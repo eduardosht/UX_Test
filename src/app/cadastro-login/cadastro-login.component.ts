@@ -13,6 +13,7 @@ export class CadastroLoginComponent implements OnInit {
   @Input() email: string;
   @Input() senha: string;
   @Input() nome: string;
+  @Input() area: string;
   @Input() nivel: string;
   meuForm: FormGroup;
   mensagem: string
@@ -22,6 +23,7 @@ export class CadastroLoginComponent implements OnInit {
       nome: ['', Validators.required],
       senha: ['', Validators.required],
       email: ['', Validators.required],
+      area: ['', Validators.required],
       nivel: ['', Validators.required]
   });
 }
@@ -35,11 +37,10 @@ ngOnInit() {
     this.loginService.cadastrar (
       form.nome,
       form.email,
-      form.senha,
-      form.nivel)
+      form.senha)
     .then(res => {
-
       localStorage.setItem('fluxotextfire_nivel', form.nivel);
+      localStorage.setItem('fluxotextfire_areatrabalho', form.area );
       localStorage.setItem('fluxotextfire_nome', form.nome);
       this.router.navigate(['/login']);
       // this.mensagem = "Cadastro";

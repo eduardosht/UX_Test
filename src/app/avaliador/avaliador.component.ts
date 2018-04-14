@@ -130,6 +130,7 @@ export class AvaliadorComponent implements OnInit {
   }
 
   proximaQuestao( n ) {
+    console.log(n);
     $('.question-box').removeClass('active')
     $('.question'+n).addClass('active');
 
@@ -145,6 +146,7 @@ export class AvaliadorComponent implements OnInit {
   }
 
   voltarQuestao( n ) {
+    console.log(n);
     $('.question-box').removeClass('active');
     $('.question'+n).addClass('active');
 

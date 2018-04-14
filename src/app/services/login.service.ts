@@ -29,7 +29,7 @@ export class LoginService {
     }
 
 
-    cadastrar(nome, email, password, senhoridade){
+    cadastrar( nome, email, password ) {
       return new Promise<any>((resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {

@@ -65,7 +65,9 @@ input[type="checkbox"]:empty ~ label {
 }
 input#nivel1,
 input#nivel2,
-input#nivel3 {
+input#nivel3,
+input#area1,
+input#area2 {
     display: none;
 }
 h2 {
