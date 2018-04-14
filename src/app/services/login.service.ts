@@ -22,6 +22,7 @@ export class LoginService {
         return new Promise((resolve, reject) => {
           this.afAuth.auth.signInWithEmailAndPassword(mail, password)
           .then(res => {
+            localStorage.setItem('fluxotextfire_mail', mail);
             this.router.navigate(['/instrucoes']);
             console.log(res);
           }, err =>reject(err))

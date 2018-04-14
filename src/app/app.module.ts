@@ -10,10 +10,13 @@ import { MenuComponent } from './menu/menu.component';
 import { CadastroLoginComponent } from './cadastro-login/cadastro-login.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from "./services/login.service";
+import  { AcoesDB } from "./services/acoesDB.service";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD8v6JZuM_IcL___u9uiGFWF_fiHTYx7lk",
@@ -42,8 +45,12 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireDatabaseModule
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    AcoesDB
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
