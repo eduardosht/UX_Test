@@ -25,10 +25,31 @@ export class AvaliadorComponent implements OnInit {
     console.log(this.user.subscribe);
     //this.startTimer();
   }
+
+  getDate_beautyFormat() {
+    let now;
+    let year;
+    let month;
+    let day;
+    let hour;
+    let minute;
+    let second;
+
+    now = new Date();
+    year = "" + now.getFullYear();
+    month = "" + (now.getMonth() + 1); if (month.length == 1) { month = "0" + month; }
+    day = "" + now.getDate(); if (day.length == 1) { day = "0" + day; }
+    hour = "" + now.getHours(); if (hour.length == 1) { hour = "0" + hour; }
+    minute = "" + now.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+    second = "" + now.getSeconds(); if (second.length == 1) { second = "0" + second; }
+    return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+  }
+
   enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, porcentagemfinal, nivelCalculado ) {
     let data = {
-      email: localStorage.getItem('fluxotextfire_mail'),
-      nivel_suposto: localStorage.getItem('fluxotextfire_nivel'),
+     'email': localStorage.getItem('fluxotextfire_mail'),
+     'nivel_suposto': localStorage.getItem('fluxotextfire_nivel'),
+     'date': this.getDate_beautyFormat(),
       respostas: {
         'pergunta1': p1,
         'pergunta2': p2,

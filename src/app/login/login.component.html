@@ -18,7 +18,7 @@
                 <input type="email" #email class="form-control" id="emailInput" placeholder="E-mail"/>
               </div>
               <div class="form-group">
-                <input type="password" #password class="form-control" id="passwordInput" placeholder="Senha"/>
+                <input type="password" #password class="form-control" id="passwordInput" placeholder="Crie sua senha (mínimo 6 caracteres)"/>
               </div>
               <button class="btn btn-lg btn-primary btn-block" (click)="fazerLogin(email.value,password.value)" type="submit">Entrar</button>
               <a [routerLink]="['/cadastro']" class="text-center ja-possui">Primeira vez aqui?</a>

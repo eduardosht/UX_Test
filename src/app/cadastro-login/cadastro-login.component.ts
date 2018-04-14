@@ -40,6 +40,7 @@ ngOnInit() {
     .then(res => {
 
       localStorage.setItem('fluxotextfire_nivel', form.nivel);
+      localStorage.setItem('fluxotextfire_nome', form.nome);
       this.router.navigate(['/login']);
       // this.mensagem = "Cadastro";
     }, err => {
@@ -52,12 +53,4 @@ ngOnInit() {
   possuiConta() {
     this.router.navigate(['/login']);
   }
-
-  // criarConta() {
-  //   let saveThis = this;
-  //   $('#cadastro-form').submit(function(e) {
-  //     e.preventDefault();
-  //     saveThis.router.navigate(['/instrucoes']);
-  //   });
-  // }
 }
