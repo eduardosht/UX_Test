@@ -13,7 +13,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class AcoesDB {
 
     user: Observable<firebase.User>;
-
     constructor( private router: Router, public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
         this.user = afAuth.authState;
     }
@@ -27,5 +26,15 @@ export class AcoesDB {
       })
     }
 
+
+    
+    enviaComentario( obj ) {
+      return new Promise<any>((resolve, reject) => {
+        this.af.database.ref('feedbacks').push( obj)
+        .then(res => {
+          resolve(res);
+        }, err => reject(err))
+      })
+    }
 
 }

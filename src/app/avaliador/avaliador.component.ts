@@ -46,7 +46,7 @@ export class AvaliadorComponent implements OnInit {
         'nivel': nivelCalculado
       }
     };
-
+  
     this.acoesDB.cadastraRespostas (data)
     .then(res => {
       console.log(res);
@@ -54,6 +54,22 @@ export class AvaliadorComponent implements OnInit {
       console.log(err);
     });
   }
+
+  enviaComentario() {
+    let data = {
+      email: localStorage.getItem('fluxotextfire_mail'),
+      'comentario': $('#comentario-txt').val()
+    };
+  
+    this.acoesDB.enviaComentario(data)
+    .then(res => {
+      console.log(res);
+      $('#comentario').html('<h1>Obrigado pelo seu comentário!</h1>');
+    }, err => {
+      console.log(err);
+    });
+  }
+
   finalizarAvaliacao() {
     var self = this; // store here
     
@@ -124,6 +140,7 @@ export class AvaliadorComponent implements OnInit {
   }
 
   showResults( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 ) {
+    $( '#comentario' ).fadeIn();
     let answerContainers = document.getElementById("quiz").querySelectorAll(".answers");
     let totalPercentage : any = 0;
     let avaliacaoStep = document.getElementById("avaliacao-step");
@@ -247,7 +264,7 @@ export class AvaliadorComponent implements OnInit {
         <h2>Parabéns!</h2>
         <p>É sempre muito bom ver talentos emergentes! Você mal pode esperar pelas descobertas que fará ao aprofundar seus estudos e ganhar mais experiências com User Experience. De acordo com o seu teste, você está pronto para aplicar para vagas de UX Designer de nível <strong>Júnior</strong>.</p>
         <img src="./assets/images/grafico-jr.png" alt="Gráfico representando sua posição como nível Júnior" title="Gráfico representando sua posição como nível Júnior">
-        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$1895 a R$3204. (Fonte: SINE)</p>
+        <p class="legend-image text-center">A faixa salarial na sua área, com a sua experiência, é de R$1895 a R$3204. (Fonte: SINE)</p>
 
         <style>
           #results h1 {
@@ -280,7 +297,7 @@ export class AvaliadorComponent implements OnInit {
         <h2>Parabéns!</h2>
         <p>User Experience é um campo relativamente novo, e mesmo assim você já entende bastante sobre a área. Continue pesquisando para fortalecer seus músculos de UX. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Pleno</strong>. Parabéns!</p>
         <img src="./assets/images/grafico-pl.png" alt="Gráfico representando sua posição como nível Pleno" title="Gráfico representando sua posição como nível Pleno">
-        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: SINE)</p>
+        <p class="legend-image text-center">A faixa salarial na sua área, com a sua experiência, é de R$2370 a R$4005. (Fonte: SINE)</p>
 
         <style>
           #results h1 {
@@ -313,7 +330,7 @@ export class AvaliadorComponent implements OnInit {
         <h2>Parabéns!</h2>
         <p>Tem sido uma jornada e tanto! Você não só tem uma alta carga de conhecimentos técnicos, mas é capaz de ter reflexões complexas para criar experiências de impacto sobre um público alvo. Você está pronto para aplicar para vagas de UX Designer de nível <strong>Sênior</strong>. Parabéns!</p>
         <img src="./assets/images/grafico-sr.png" alt="Gráfico representando sua posição como nível Sênior" title="Gráfico representando sua posição como nível Sênior">
-        <p class="legend-image">A faixa salarial na sua área, com a sua experiência, é de R$2962 a R$5006. (Fonte: SINE)</p>
+        <p class="legend-image text-center">A faixa salarial na sua área, com a sua experiência, é de R$2962 a R$5006. (Fonte: SINE)</p>
 
         <style>
           #results h1 {
