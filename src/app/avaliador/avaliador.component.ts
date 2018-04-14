@@ -47,9 +47,10 @@ export class AvaliadorComponent implements OnInit {
 
   enviarDados( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, porcentagemfinal, nivelCalculado ) {
     let data = {
-     'email': localStorage.getItem('fluxotextfire_mail'),
-     'nivel_suposto': localStorage.getItem('fluxotextfire_nivel'),
-     'date': this.getDate_beautyFormat(),
+      'email': localStorage.getItem('fluxotextfire_mail'),
+      'nome': localStorage.getItem('fluxotextfire_nome'),
+      'nivel_suposto': localStorage.getItem('fluxotextfire_nivel'),
+      'date': this.getDate_beautyFormat(),
       respostas: {
         'pergunta1': p1,
         'pergunta2': p2,
@@ -130,7 +131,6 @@ export class AvaliadorComponent implements OnInit {
   }
 
   proximaQuestao( n ) {
-    console.log(n);
     $('.question-box').removeClass('active')
     $('.question'+n).addClass('active');
 
@@ -146,7 +146,6 @@ export class AvaliadorComponent implements OnInit {
   }
 
   voltarQuestao( n ) {
-    console.log(n);
     $('.question-box').removeClass('active');
     $('.question'+n).addClass('active');
 
