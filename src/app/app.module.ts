@@ -8,9 +8,11 @@ import { AvaliadorComponent } from './avaliador/avaliador.component';
 import { InstrucoesComponent } from './instrucoes/instrucoes.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadastroLoginComponent } from './cadastro-login/cadastro-login.component';
+import { ResultadoComponent } from './resultado/resultado.component'; 
 import { LoginComponent } from './login/login.component';
 import { LoginService } from "./services/login.service";
 import  { AcoesDB } from "./services/acoesDB.service";
+import  { ResultForm } from "./services/resultForm.service";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -35,6 +37,7 @@ export const firebaseConfig = {
     MenuComponent,
     CadastroLoginComponent,
     LoginComponent,
+    ResultadoComponent,
         
     
   ],
@@ -49,7 +52,8 @@ export const firebaseConfig = {
   ],
   providers: [
     LoginService,
-    AcoesDB
+    AcoesDB,
+    ResultForm
   ],
   bootstrap: [AppComponent]
 })
