@@ -21,6 +21,7 @@
                 <input type="password" #password class="form-control" id="passwordInput" placeholder="Senha"/>
               </div>
               <button class="btn btn-lg btn-primary btn-block" (click)="fazerLogin(email.value,password.value)" type="submit">Entrar</button>
+              <!--
               <div class="form-group">
                 <button type="buton" class="btn btn-block" (click)="signInWithFacebook()">
                   <i class="fa fa-facebook" aria-hidden="true"></i> 
@@ -30,7 +31,7 @@
                   <i class="fa fa-google" aria-hidden="true"></i>
                   Login com Gmail
                 </button>
-              </div>
+              </div>-->
               <a [routerLink]="['/cadastro']" class="text-center ja-possui">Primeira vez aqui?</a>
             </form>
 
