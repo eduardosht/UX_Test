@@ -46,8 +46,12 @@ ngOnInit() {
       // this.mensagem = "Cadastro";
     }, err => {
       console.log(err);
-    
-      this.mensagem = err.message;
+      if(err.message.valueOf() === "The email address is badly formatted."){this.mensagem = "Email inválido";
+    }
+    if(err.message.valueOf() === "The email address is already in use by another account."){this.mensagem = "O email inserido já está em uso."}
+    if(err.message.valueOf() === "Password should be at least 6 characters"){this.mensagem = "Sua senha deve ter pelo menos 6 caracteres."}
+    document.querySelector('#scroller').scrollIntoView();
+
       console.log(this.mensagem);
     });
   }

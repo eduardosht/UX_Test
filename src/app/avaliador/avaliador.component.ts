@@ -25,7 +25,7 @@ export class AvaliadorComponent implements OnInit {
     document.getElementById('timer').innerHTML = '20' + ":" + '00';
     console.log(this.user.subscribe);
     $('html,body').animate({ scrollTop: 0 }, 'slow');
-    //this.startTimer();
+    this.startTimer();
   }
 
   getDate_beautyFormat() {
@@ -291,21 +291,24 @@ export class AvaliadorComponent implements OnInit {
     }
     
     startTimer() {
-      let presentTime = document.getElementById('timer').innerHTML;
-      let timeArray = presentTime.split(/[:]+/);
-      let m = parseFloat( timeArray[0] );
-      let s = this.checkSecond(( parseFloat( timeArray[1] ) - 1));
-      
-      if(s==59){m=m-1}
-      //if(m<0){alert('timer completed')}
-      
+      var timeInMinutes = 1;
+      var currentTime = new Date().getTime();
+      var currentTimePlus20 = new Date(currentTime + timeInMinutes*60*1000).getTime();
+
+      var x = setInterval(function() {
+
+      var now = new Date().getTime();
+      var deadline  = new Date(currentTimePlus20 - now).getTime();
+
+        var m = Math.floor((deadline % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((deadline % (1000 * 60)) / 1000);
+        
       document.getElementById('timer').innerHTML = m + ":" + s;
-      setTimeout(this.startTimer(), 1000);
+      if(m==0 && s==0){
+        alert("Seu tempo acabou!");
+        clearTimeout(x);}
+      }, 1000);
     }
     
-    checkSecond(sec) {
-      if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-      if (sec < 0) {sec = "59"};
-      return sec;
-    }
+
 }
