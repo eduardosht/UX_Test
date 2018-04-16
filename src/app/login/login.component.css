@@ -1,6 +1,6 @@
 
 .btn {
-    margin: 50px auto 0 auto;
+    margin: 20px auto 0 auto;
     display: block;
     max-width: 150px;
     background-color: #F27A29;
@@ -126,6 +126,17 @@ button.btn.btn-primary.center-block.criar-conta-btn {
     width: 250px;
     max-width: 250px;
     padding: 19px 0;
+}
+.form-group .btn {
+    margin: 40px auto 0 auto;
+    max-width: 250px;
+    color: #FFF;
+}
+.form-group .btn i {
+    margin-right: 5px;
+}
+.form-group .btn:last-child {
+    margin-top: 10px;
 }
 @media screen and (min-width: 540px) {
     a {

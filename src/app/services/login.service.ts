@@ -11,33 +11,43 @@ import { AngularFireAuth } from 'angularfire2/auth';
 @Injectable()
 export class LoginService {
 
-    user: Observable<firebase.User>;
+  user: Observable<firebase.User>;
 
-    constructor( private router: Router, public afAuth: AngularFireAuth) {
-        this.user = afAuth.authState;
-    }
-
-
-    login(mail: string, password: string) {
-        return new Promise((resolve, reject) => {
-          this.afAuth.auth.signInWithEmailAndPassword(mail, password)
-          .then(res => {
-            localStorage.setItem('fluxotextfire_mail', mail);
-            this.router.navigate(['/instrucoes']);
-          }, err =>reject(err))
-        })
-    }
+  constructor( private router: Router, public afAuth: AngularFireAuth) {
+      this.user = afAuth.authState;
+  }
 
 
-    cadastrar( nome, email, password ) {
-      return new Promise<any>((resolve, reject) => {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+  login(mail: string, password: string) {
+      return new Promise((resolve, reject) => {
+        this.afAuth.auth.signInWithEmailAndPassword(mail, password)
         .then(res => {
-
-          resolve(res);
-        }, err => reject(err))
+          localStorage.setItem('fluxotextfire_mail', mail);
+          this.router.navigate(['/instrucoes']);
+        }, err =>reject(err))
       })
-    }
+  }
 
 
+  cadastrar( nome, email, password ) {
+    return new Promise<any>((resolve, reject) => {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(res => {
+
+        resolve(res);
+      }, err => reject(err))
+    })
+  }
+
+  signInWithFacebook() {
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.FacebookAuthProvider()
+    )
+  }
+
+  signInWithGoogle() {
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    )
+  }
 }

@@ -12,7 +12,7 @@ const appRoutes : Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'cadastro', component: CadastroLoginComponent },
     { path: 'resultado', component: ResultadoComponent },
-    { path: '', component: CadastroLoginComponent }
+    { path: '', component: LoginComponent }
 ];
 
 

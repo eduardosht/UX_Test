@@ -3,6 +3,7 @@ import { LoginService } from "../services/login.service";
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +12,19 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LoginComponent implements OnInit  {
 
-    user: Observable<firebase.User>;
-    firebase;
+  user: Observable<firebase.User>;
+  mensagem: string;
+  firebase;
 
-   mensagem: string;
-  constructor(private loginService: LoginService,public afAuth: AngularFireAuth) { 
+  constructor(private router: Router, private loginService: LoginService,public afAuth: AngularFireAuth) { 
      this.user = afAuth.authState;
-  
   }
 
   ngOnInit() {
     this.mensagem = '';
   }
 
-   fazerLogin(email, password) {
+  fazerLogin(email, password) {
     this.loginService.login(email, password)
     .then(res => {
       console.log(res);
@@ -34,7 +34,23 @@ export class LoginComponent implements OnInit  {
     });
   }
 
-  
+  signInWithFacebook() {
+    this.loginService.signInWithFacebook()
+    .then(res => {
+      this.router.navigate(['/instrucoes']);
+    }, err => {
+      console.log(err);
+      this.mensagem = err;
+    });
+  }
 
-
+  signInWithGoogle() {
+    this.loginService.signInWithGoogle()
+    .then(res => {
+      this.router.navigate(['/instrucoes']);
+    }, err => {
+      console.log(err);
+      this.mensagem = err;
+    });
+  }
 }
