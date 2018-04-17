@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import  { AcoesDB } from "../services/acoesDB.service";
 import  { ResultForm } from "../services/resultForm.service";
+import { GoogleAnalyticsEventsService } from "../services/google-analytics-events.service";
 
 import * as $ from 'jquery';
 
@@ -18,7 +19,7 @@ export class AvaliadorComponent implements OnInit {
   
   user: Observable<firebase.User>;
 
-  constructor( private router: Router, private acoesDB: AcoesDB, public afAuth: AngularFireAuth, private result: ResultForm ) {
+  constructor( private router: Router, private acoesDB: AcoesDB, public afAuth: AngularFireAuth, private result: ResultForm, public googleAnalyticsEventsService: GoogleAnalyticsEventsService ) {
     this.user = afAuth.authState;
   }
   ngOnInit() {
@@ -113,6 +114,8 @@ export class AvaliadorComponent implements OnInit {
         $('#results').fadeIn('slow');
         self.showResults( p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 );
       });
+
+      this.googleAnalyticsEventsService.emitEvent( "verResultado", "finalizaTeste", "finalizaTeste", 0 );
 
     } else {
       alert('Você tem perguntas que devem ser respondidas');
@@ -291,10 +294,9 @@ export class AvaliadorComponent implements OnInit {
     }
     
     startTimer() {
-      var timeInMinutes = 1;
+      var timeInMinutes = 20;
       var currentTime = new Date().getTime();
       var currentTimePlus20 = new Date(currentTime + timeInMinutes*60*1000).getTime();
-
       var x = setInterval(function() {
 
       var now = new Date().getTime();
@@ -303,7 +305,7 @@ export class AvaliadorComponent implements OnInit {
         var m = Math.floor((deadline % (1000 * 60 * 60)) / (1000 * 60));
         var s = Math.floor((deadline % (1000 * 60)) / 1000);
         
-      document.getElementById('timer').innerHTML = m + ":" + s;
+      document.getElementById('timer').innerHTML = ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
       if(m==0 && s==0){
         alert("Seu tempo acabou!");
         clearTimeout(x);}
