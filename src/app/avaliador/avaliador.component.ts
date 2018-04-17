@@ -291,7 +291,7 @@ export class AvaliadorComponent implements OnInit {
     }
     
     startTimer() {
-      var timeInMinutes = 1;
+      var timeInMinutes = 20;
       var currentTime = new Date().getTime();
       var currentTimePlus20 = new Date(currentTime + timeInMinutes*60*1000).getTime();
 
