@@ -29,9 +29,9 @@ export class LoginService {
   }
 
 
-  cadastrar( nome, email, password ) {
+  cadastrar( nome, email, senha, senha2 ) {
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(email, password)
+      firebase.auth().createUserWithEmailAndPassword(email, senha)
       .then(res => {
 
         resolve(res);

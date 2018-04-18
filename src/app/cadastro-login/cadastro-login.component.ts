@@ -34,10 +34,12 @@ ngOnInit() {
 
   fazerCadastro( form ) {
     console.log(form);
+
     this.loginService.cadastrar (
       form.nome,
       form.email,
-      form.senha)
+      form.senha,
+      form.senha2)
     .then(res => {
       localStorage.setItem('fluxotextfire_nivel', form.nivel);
       localStorage.setItem('fluxotextfire_areatrabalho', form.area );
@@ -46,8 +48,7 @@ ngOnInit() {
       // this.mensagem = "Cadastro";
     }, err => {
       console.log(err);
-      if(err.message.valueOf() === "The email address is badly formatted."){this.mensagem = "Email inválido";
-    }
+    if(err.message.valueOf() === "The email address is badly formatted."){this.mensagem = "Email inválido";}
     if(err.message.valueOf() === "The email address is already in use by another account."){this.mensagem = "O email inserido já está em uso."}
     if(err.message.valueOf() === "Password should be at least 6 characters"){this.mensagem = "Sua senha deve ter pelo menos 6 caracteres."}
     document.querySelector('#scroller').scrollIntoView();
@@ -58,4 +59,5 @@ ngOnInit() {
   possuiConta() {
     this.router.navigate(['/login']);
   }
+
 }

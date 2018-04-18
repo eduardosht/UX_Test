@@ -14,6 +14,8 @@ import { LoginService } from "./services/login.service";
 import  { AcoesDB } from "./services/acoesDB.service";
 import  { ResultForm } from "./services/resultForm.service";
 import { GoogleAnalyticsEventsService } from "./services/google-analytics-events.service";
+import { AuthGuard } from './guard/auth.guard';
+import { UserService } from "./services/user.service";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -53,9 +55,11 @@ export const firebaseConfig = {
   ],
   providers: [
     LoginService,
+    UserService,
     AcoesDB,
     ResultForm,
-    GoogleAnalyticsEventsService
+    GoogleAnalyticsEventsService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
