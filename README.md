@@ -80,3 +80,4 @@ Parte das variáveis de identificação(nome, email, nível etc) estão sendo tr
 * Autenticação de usuários com Firebase
 * Componente timer
 * Componente de login e cadastro
+* Component GuardAuth
