@@ -26,10 +26,10 @@ Informações de desenvolvimento, estratégias, ferramentas, time e etc...
 
 ## Desenvolvido com
 * [JavaScript](https://www.javascript.com/) - Linguagem de Programação
-    * [Angular](https://angular.io/) - Utilizado o framework para criar uma aplicação webapp
-    * [Node JS](https://nodejs.org/en/) - Usado o Gerenciador de Pacotes
-    * [Bootstrap 4](https://getbootstrap.com/) - Framework utilizado para agilizar o desenvolvimento.
     * [jQuery (3.3.1)](https://jquery.com/) - Biblioteca JavaScript
+* [Angular](https://angular.io/) - Utilizado o framework para criar uma aplicação webapp
+* [Node JS](https://nodejs.org/en/) - Usado o Gerenciador de Pacotes
+* [Bootstrap 4](https://getbootstrap.com/) - Framework utilizado para agilizar o desenvolvimento.
 * [Firebase](https://firebase.google.com/) - Persistência de dados e autenticação de usuário
 * [Github Pages](https://pages.github.com/) - Hospedagem direta do repositório do Github
 * [Tiny JPG / Tiny PNG](https://tinyjpg.com/) - Compressão de imagens
